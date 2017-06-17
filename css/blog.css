@@ -1,0 +1,124 @@
+
+
+body{
+	background-color: #999;
+}
+#main-body{
+	display: flex;
+	margin: 0 auto;
+	flex-dirction:row;
+	justify-content:center;
+	max-width: 1000px;
+}
+article{
+	margin-top:20px; 
+	width: 65vw;
+}
+aside{
+	
+	width: 25vw;
+	margin-right: 10px;
+	margin-top:20px;	
+}
+
+.text-box{
+	margin: 10px auto;
+	box-shadow:0 0 10px #555; 
+	border-radius: 2px;
+	background-color: #fff;
+	
+}
+.text-box ul{
+	padding: 16px 18px 10px; 
+}
+.text-box li{
+	list-style:none;
+	height: 20px;
+	margin-bottom: 7px;
+}
+.text-body{
+	padding: 10px;
+}
+.text-box img{
+	position: absolute;
+	margin: 3px 0;
+	width: 50px;
+	height: 50px;
+}
+.text-foot{
+	display: flex;
+	flex-dirction:row;
+	justify-content:space-around;
+	border-top: 1px solid #eee;
+	
+}
+.text-foot p{
+	display: flex;
+	flex-dirction:row;
+	justify-content:center;
+	text-align: center;
+	line-height: 22px;
+	font-size: 12px;
+	height: 22px;
+	margin: 8px 0;
+	border-right: 1px solid #ddd;
+	flex-grow:1;
+	
+}
+.icon-out{
+	width: 22px;
+	height: 22px;
+	border:none;
+}
+.text-foot span{
+	width: 22px;
+	height: 22px;
+	border:none;
+	cursor: pointer;		
+}
+
+#a {
+	background: url(../icon/sc.png) no-repeat 50% 50%;
+	background-size: 14px 14px;
+}
+#b{
+	background: url(../icon/pl.png) no-repeat 50% 50%;
+	background-size: 14px 14px;
+}
+#c{
+	background: url(../icon/zf.png) no-repeat 50% 50%;
+	background-size: 14px 14px;
+}
+.content{
+	padding-left: 60px;	
+}
+
+
+aside h3{
+	padding: 10px 10px 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+
+@media  screen  and (max-width: 768px) {
+	aside{
+		display: none;
+	}
+	article{
+		width: 90vw;
+	}
+	.content{
+		padding: 0;
+	}
+	.text-box img{
+		display: none;
+		
+	}
+
+}
+
+
+
+
+
+

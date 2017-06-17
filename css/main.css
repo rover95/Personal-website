@@ -1,0 +1,62 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "Microsoft YaHei";
+}
+body{
+	padding-top: 80px;
+}
+header{
+	position: fixed;
+	top: 0;
+	z-index: 99;
+	display: flex;
+	flex-dirction:column;
+	justify-content:space-around;
+	align-items:center;
+	font-size: 12px;
+	height: 5em;
+	width: 100%;
+	background-color: #333;
+}
+header img{
+	margin: 0 25px;
+	height: 50px;
+}
+header ul{
+	height: 100%;
+	display: flex;
+	flex-dirction:row;
+	justify-content:space-around;
+	align-items:center;
+}
+header ul li{
+	margin: 0 20px;
+	list-style-type:none;
+	color: #ddd;
+}
+header nav{
+	height: 100%;
+}
+nav a{
+	color: #eee;
+	font-style: normal;
+	text-decoration: none;
+}
+.min-nav{
+	display: none;
+	margin: 15px 25px;
+	height: 30px;
+	cursor:pointer;
+}
+@media  screen  and (max-width: 768px) {
+	header{
+		justify-content:space-between;
+	}
+	header nav{
+		display: none;
+	}
+	.min-nav{
+		display: block;
+	}
+}

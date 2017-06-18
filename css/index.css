@@ -1,0 +1,89 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color: #000;
+}
+#all{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#all div{
+	/*display: flex;
+	flex-derection:row;
+	justify-content:center;
+	align-items:center;*/
+	width: 25%;
+	height: 100vh;
+	float: left;
+	opacity: 1;
+}
+.font{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	line-height: 100vh;
+	text-align: center;
+	color: #fff;
+	font-size: 5vh;
+	font-weight: bold;
+	background-color: rgba(0,0,0,.5);
+}
+.hide{
+	display: none;
+	position: relative;
+	top: 5vh;
+}
+.font span{
+	position: absolute;
+	left: 10%;
+}
+.font:hover{
+	background-color: rgba(0,0,0,.1);
+}
+.font:hover > span{
+	
+}
+.font:hover > .hide{
+	display: block;
+}
+.ani-1s{
+	animation-duration: 0.5s;
+}
+#a{			
+	background: #000 url(../img/a.jpg) no-repeat center;
+	background-size: auto 100%;
+}
+#b{
+	background: #000 url(../img/b.jpg) no-repeat 40%;
+	background-size: auto 100%;
+}
+#c{
+	background: #000 url(../img/c.jpg) no-repeat 40%;
+	background-size: auto 100%;
+}
+#d{
+	background: #000 url(../img/d.jpg) no-repeat center;
+	background-size: auto 100%;
+}
+@media  screen  and (max-width: 768px) {
+	#all div{
+		width: 100vw;
+		height: 25vh;		
+	}
+	#a,#b,#c,#d{
+		background-size: 100% auto;
+	}
+	.font{
+		line-height: 25vh;
+		font-size: 5vw;
+	}
+	.font span{
+	position: absolute;
+	left: 40%;
+	}
+}
+
+

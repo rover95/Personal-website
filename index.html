@@ -6,7 +6,6 @@
 	<title>BEGIN</title>
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/index.css">
-	
 </head>
 <body>
 	<div id="all">
@@ -35,6 +34,15 @@
 			</p>
 		</div>
 	</div>
-
+	<script src="js/base.js"></script>
+	<script>
+		R('.font').hover(function(){	
+			R(this).find('.hide').removeclass('fadeOutDown')		
+			R(this).find('.hide').css('display','block')
+		},function(){
+			R(this).find('.hide').addclass('fadeOutDown')
+			
+		})
+	</script>
 </body>
 </html>

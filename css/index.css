@@ -42,12 +42,11 @@ body{
 }
 .font:hover{
 	background-color: rgba(0,0,0,.1);
+	box-shadow: 0 0 10px #000;
 }
-.font:hover > span{
-	
-}
+
 .font:hover > .hide{
-	display: block;
+	/*display: block;*/
 }
 .ani-1s{
 	animation-duration: 0.5s;

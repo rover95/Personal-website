@@ -1,7 +1,7 @@
 
 
 body{
-	background-color: #999;
+	background-color: #dedede;
 }
 #main-body{
 	display: flex;
@@ -23,7 +23,7 @@ aside{
 
 .text-box{
 	margin: 10px auto;
-	box-shadow:0 0 10px #555; 
+	box-shadow:0 0 2px rgba(0,0,0,.1); 
 	border-radius: 2px;
 	background-color: #fff;
 	

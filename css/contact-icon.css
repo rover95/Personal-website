@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'contact-icon';
+  src:  url('fonts/contact-icon.eot?nxemcr');
+  src:  url('fonts/contact-icon.eot?nxemcr#iefix') format('embedded-opentype'),
+    url('fonts/contact-icon.ttf?nxemcr') format('truetype'),
+    url('fonts/contact-icon.woff?nxemcr') format('woff'),
+    url('fonts/contact-icon.svg?nxemcr#contact-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'contact-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github:before {
+  content: "\e900";
+}
+.icon-qq:before {
+  content: "\e901";
+}
+.icon-tuchong:before {
+  content: "\e902";
+}
+.icon-weixin:before {
+  content: "\e903";
+}
+.icon-xinlang:before {
+  content: "\e904";
+}

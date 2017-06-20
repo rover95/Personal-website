@@ -114,24 +114,12 @@ aside{
 	border-radius: 2px;
 	cursor: pointer;
 }
-.bg-r{
-	background-color: red;
-}
-.bg-b{
-	background-color: #159;
-}
-.bg-o{
-	background-color: orange;
-}
-.bg-g{
-	background-color: #d90;
-}
+
 .text-foot{
 	display: flex;
 	flex-direction:row;
 	justify-content:space-around;
-	border-top: 1px solid #eee;
-	
+	border-top: 1px solid #eee;	
 }
 .text-foot p{
 	display: flex;

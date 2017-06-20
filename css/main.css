@@ -6,6 +6,24 @@
 body{
 	padding-top: 60px;
 }
+.bg-r{
+	background-color: red;
+}
+.bg-b{
+	background-color: #159;
+}
+.bg-y{
+	background-color: orange;
+}
+.bg-o{
+	background-color: #d50;
+}
+.bg-g{
+	background-color: #1d1;
+}
+.bg-h{
+	background-color: #000;
+}
 header{
 	position: fixed;
 	top: 0;
@@ -43,12 +61,7 @@ nav a{
 	font-style: normal;
 	text-decoration: none;
 }
-.cover{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,.5);
-}
+
 .min-nav{
 	display: none;
 	margin: 15px 25px;

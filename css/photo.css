@@ -1,3 +1,11 @@
+body{
+	background-color: #fff;
+}
+header a{
+	font-size: 14px;
+	font-weight: bolder;
+	color: #fff;
+}
 .photo-head{
 	display: flex;
 	flex-direction:column;
@@ -7,12 +15,130 @@
 	margin: 0;
 	height: 500px;
 	/*max-width: 1000px;*/
-	background: rgba(0,0,0,0) url(../img/d.jpg) no-repeat 50% 50%;
-	background-size: 100% auto;
+	/*background: rgba(0,0,0,0) url(../img/d.jpg) no-repeat 50% 50%;
+	background-size: 100% auto;*/
+}
+.icon-box{
+	margin-top: 5vh;
+	height: 30px;
+	z-index: 9;
+}
+.icon-cell{
+	display: inline-block;
+	margin: 0 3px;
+	padding-top: 6px;
+	height: 24px;
+	width: 30px;
+	font-size: 18px;
+	line-height: 50px;
+	text-align: center;
+	color: #eee;
+	text-decoration:none;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.cover{
+	position: absolute;
+	width: 100%;
+	height: 500px;
+	background-color: rgba(0,0,0,.5);
 }
 .name{
 	color: #fff;
 	font-size: 45px;
 	font-weight: bolder;
 	z-index: 9;
+}
+.word{
+	color: #fff;
+	font-size: 14px;
+	z-index: 9;
+}
+#carousel{
+	position: absolute;
+	width:100VW;
+	height: 500px;
+	background-color: #159;
+	overflow: hidden;
+}
+
+.crs_img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	white-space: nowrap;
+}
+.crs_img img{ 
+	display: inline-block;
+	width:100VW;
+	height: 500px;
+	background-color: #159;
+	z-index: 2;
+	padding: 0 0;
+}
+
+
+
+.photo-nav{
+	display: flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+	margin-bottom: 50px;
+	width: 100vw;
+	height: 75px;
+	box-shadow: 0 5px 5px rgba(0,0,0,.1)
+}
+.photo-nav li{
+	float: left;
+	color: #333;
+	margin: 0 20px;
+	padding-bottom: 5px;
+	list-style:none;
+	cursor: pointer;
+	border-bottom: 2px solid rgba(0,0,0,0);
+}
+.photo-nav li:hover{
+	color: #159;
+	border-bottom: 2px solid #159;
+}
+
+
+#photo-body{
+	display: flex;
+	flex-flow:row wrap;
+	justify-content:flex-start;
+	align-items:flex-start;
+	width: 90vw;
+	margin: 10px auto;
+}
+.photo-column{
+	width: 30vw;
+}
+.photo-cell{
+	float: left;
+	position: relative;
+
+	margin: 0.25vw;
+	background-color: #fff;
+}
+.photo-body  figure{
+	width: 29vw;
+	background-color: #fff;
+}
+figure img{
+	/*height: 100%;*/
+	width: 29vw;
+}
+.photo-cell figcaption{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.img-cover{
+    position: absolute;
+	width: 100%;
+	height: 500px;
+	background-color: rgba(0,0,0,.5);
 }

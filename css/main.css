@@ -4,7 +4,7 @@
 	font-family: "Microsoft YaHei";
 }
 body{
-	padding-top: 80px;
+	padding-top: 60px;
 }
 header{
 	position: fixed;
@@ -17,6 +17,7 @@ header{
 	font-size: 12px;
 	height: 5em;
 	width: 100%;
+	box-shadow: 0 1px 10px rgba(0,0,0,.5);
 	background-color: #333;
 }
 header img{
@@ -33,7 +34,6 @@ header ul{
 header ul li{
 	margin: 0 20px;
 	list-style-type:none;
-	color: #ddd;
 }
 header nav{
 	height: 100%;
@@ -42,6 +42,12 @@ nav a{
 	color: #eee;
 	font-style: normal;
 	text-decoration: none;
+}
+.cover{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
 }
 .min-nav{
 	display: none;

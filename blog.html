@@ -6,23 +6,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/blog.css">
+	<link rel="stylesheet" href="css/csshake.css">
 </head>
 <body>
 	<header>
-		<img src="icon/unb.png" alt="">
+		<!-- <img src="icon/unb.png" alt=""> -->
 		<nav>
 			<ul>
-				<li><a href="home.html">HOME</a></li>
-				<li><a href="blog.html">BLOG</a></li>
-				<li>##</li>
-				<li><a href="blog.html">GAME</a></li>
-				<li><a href="index.html">ABOUT</a></li>
+				<li><a href="home.html" class="shake-slow shake-constant shake-constant--hover">HOME</a></li>
+				<li><a href="blog.html" class="shake">BLOG</a></li>
+				<li><a href="photo.html" class="shake">PHOTO</a></li>
+				<li><a href="blog.html" class="shake">GAME</a></li>
+				<li><a href="index.html" class="shake">ABOUT</a></li>
 			</ul>
 		</nav>
 		<img src="icon/menu.png" alt="menu" class="min-nav">
 	</header>
-	<div id="main-body">
 
+	<div class="blog-head">
+		<img src="img/b.jpg" alt="头像" class="round">
+		<p class="blog-user">ROVER95</p>
+	</div>
+	<div id="main-body">
+		
 		<aside>
 			<div class="text-box">
 				<h3>相关</h3>
@@ -59,21 +65,36 @@
 
 		<article>
 			<div class="text-box">
+				<div class="text-head">
+					<img src="icon/unb.png" alt="头像" class="img-head">
+					<h3>响应式布局的注意点</h3>
+					<p class="text-date">2017.6.18</p>
+					<div class="lable-box">
+						<span class="cell bg-r">JS</span>
+						<span class="cell bg-b">CSS</span>
+						<span class="cell bg-g">HTML</span>
+					</div>
+				</div>
 				<div class="text-body">
-					<img src="icon/unb.png" alt="头像">
 					<div class="content">
-						<h3>响应式布局的注意点</h2>
+						
 						<section>
+							<p>1. 加meta viewport标签禁用缩放自适应</p>
+							<p>2. 确定核心布局，布局保持简单干净，减少无关紧要的元素</p>
+							<p>3. 设计栅格布局方案
+								Twitter Bootstrap 倡导的12分制网格，为2分、3分、4分甚至6分布局，或是不均等分的布局</p>
+							<p>4. 满足主要断点(320px 480px 640px 768px 1024px等),针对不同情况应用不同方案</p>
+							<p>5. 少用内联元素、绝对定位，百分比拉伸需谨慎勿过度变形</p>
+							<p>6. 慎用固定值设置图片和内容元素，图片应可伸缩，并限制最大宽</p>
+							<p>7. 考虑频幕分辨率</p>
+							<p>8. 以及非核心模块的降级和取舍</p>
 							
-							1. 加meta viewport标签禁用缩放自适应
-							2. 确定核心布局，布局保持简单干净，减少无关紧要的元素
-							3. 设计栅格布局方案
-								Twitter Bootstrap 倡导的12分制网格，为2分、3分、4分甚至6分布局，或是不均等分的布局
-							4. 满足主要断点(320px 480px 640px 768px 1024px等),针对不同情况应用不同方案
-							5. 少用内联元素、绝对定位，百分比拉伸需谨慎勿过度变形
-							6. 慎用固定值设置图片和内容元素，图片应可伸缩，并限制最大宽
-							7. 考虑频幕分辨率
-							8. 以及非核心模块的降级和取舍
+							
+							
+							
+							
+							
+							
 						</section>
 					</div>
 				</div>
@@ -87,7 +108,7 @@
 			</div>
 			<div class="text-box">
 				<div class="text-body">
-					<img src="icon/unb.png" alt="头像">
+					<img src="icon/unb.png" alt="头像" class="img-head">
 					<div class="content">
 						<h3>进程与线程</h2>
 						<section>
@@ -114,7 +135,7 @@
 
 			<div class="text-box">
 				<div class="text-body">
-					<img src="icon/unb.png" alt="头像">
+					<img src="icon/unb.png" alt="头像" class="img-head">
 					<div class="content">
 						<h3>第二条</h2>
 						<section>

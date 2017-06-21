@@ -111,7 +111,7 @@ header a{
 	justify-content:flex-start;
 	align-items:flex-start;
 	width: 90vw;
-	margin: 10px auto;
+	margin: 5VW auto;
 }
 .photo-column{
 	width: 30vw;
@@ -119,26 +119,38 @@ header a{
 .photo-cell{
 	float: left;
 	position: relative;
-
 	margin: 0.25vw;
-	background-color: #fff;
 }
 .photo-body  figure{
 	width: 29vw;
-	background-color: #fff;
 }
 figure img{
 	/*height: 100%;*/
 	width: 29vw;
+
 }
+
 .photo-cell figcaption{
+	display: flex;
+	flex-flow:column wrap;
+	justify-content:space-between;
+	align-items:flex-start;
 	position: absolute;
 	left: 0;
 	top: 0;
+	width: 100%;
+	height: 100%;
+	color: #eee;
+}
+figcaption p{
+	display: none;
+	padding: 15px;
 }
 .img-cover{
+	display: none;
     position: absolute;
 	width: 100%;
-	height: 500px;
-	background-color: rgba(0,0,0,.5);
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
 }
+	

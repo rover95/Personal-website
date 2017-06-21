@@ -23,21 +23,14 @@
 		},4000)
 	}
 	interval();
-	// $('#carousel li').hover(function(){
-	// 	var num=$(this).childNum()*-800
-	// 	clearInterval(carousel)
-	// 	$('.crs_img').animate({
-	// 		attr:'x',
-	// 		target:num,
-	// 		time:50,
-	// 		speed:5,
-			
-	// 	})
+	
 
-	// 	$('.crs_words p').html($('.crs_img img').getnum($(this).childNum()).attr('alt'))
-	// 	$('#carousel li').css('color','#999')
-	// 	$(this).css('color','#333')
-		
-	// },function(){
-	// 	interval()
-	// })
+	R('.photo-cell').hover(function(){
+		var imgH=R(this).find('img').css().first().height	//获取img高度，修复cover层的一个bug
+		R(this).find('p').css('display','block');
+		R(this).find('.img-cover').css('height',imgH+'px');
+		R(this).find('.img-cover').css('display','block');
+	},function(){
+		R(this).find('p').css('display','none');
+		R(this).find('.img-cover').css('display','none');
+	})

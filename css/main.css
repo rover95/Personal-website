@@ -42,24 +42,46 @@ header img{
 	margin: 0 25px;
 	height: 50px;
 }
-header ul{
+nav ul{
 	height: 100%;
 	display: flex;
 	flex-dirction:row;
 	justify-content:space-around;
 	align-items:center;
 }
-header ul li{
+nav ul li{
 	margin: 0 20px;
 	list-style-type:none;
 }
 header nav{
 	height: 100%;
 }
-nav a{
+header a{
 	color: #eee;
 	font-style: normal;
 	text-decoration: none;
+}
+.head-menu{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,.8);
+}
+.head-menu ul{
+	margin-top: 10vh;
+	height: 100%;
+	width: 100%;
+	
+}
+.head-menu li{
+	margin: 20px auto;
+	list-style-type:none;
+	text-align: center;
+	color: #fff;
+	font-size: 5vw;
 }
 
 .min-nav{
@@ -67,6 +89,7 @@ nav a{
 	margin: 15px 25px;
 	height: 30px;
 	cursor:pointer;
+	z-index: 99;
 }
 @media  screen  and (max-width: 768px) {
 	header{

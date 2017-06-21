@@ -32,16 +32,19 @@
 	}
 	interval();
 	
-
-	R('.photo-cell').hover(function(){
-		var imgH=R(this).find('img').css().first().height	//获取img高度，修复cover层的一个bug
-		R(this).find('p').css('display','block');
-		R(this).find('.img-cover').css('height',imgH+'px');
-		R(this).find('.img-cover').css('display','block');
-	},function(){
-		R(this).find('p').css('display','none');
-		R(this).find('.img-cover').css('display','none');
-	})
+//图片hover事件
+	function imgHover(){
+		R('.photo-cell').hover(function(){
+			var imgH=R(this).find('img').css().first().height	//获取img高度，修复cover层的一个bug
+			R(this).find('p').css('display','block');
+			R(this).find('.img-cover').css('height',imgH+'px');
+			R(this).find('.img-cover').css('display','block');
+		},function(){
+			R(this).find('p').css('display','none');
+			R(this).find('.img-cover').css('display','none');
+		})
+	}
+		
 
 
 	//登录框
@@ -82,3 +85,40 @@
 		// document.documentElement.style.overflow="hidden";
 		R('.all-cover').first().style.overflow="scroll"
 	})
+
+
+//动态生成图片
+	
+	// var imgHtml=`<div class="photo-cell">
+	// 			<figure>
+	// 				<div class="img-cover"></div>
+	// 				<img src="${imgSrc}" alt="">
+	// 				<figcaption>
+	// 					<p>${imgName}</p>
+	// 					<p>${imgDate}</p>
+	// 				</figcaption>
+	// 			</figure>
+	// 		</div>`
+
+	var imgSrc='img/_DSC6707.JPG';
+	var imgName='gun';
+	var imgDate='2017-05-16';
+	function img(node,src,name,date){
+		node= node=='c'?'#column-left':node=='r'?'#column-right':node=='l'?'#column-left':'#column-left';
+		var html= `<div class="photo-cell">
+				<figure>
+					<div class="img-cover"></div>
+					<img src="${src}" alt="">
+					<figcaption>
+						<p>${name}</p>
+						<p>${date}</p>
+					</figcaption>
+				</figure>
+			</div>`
+
+		html=html+R(node).html();
+		R(node).html(html);
+		imgHover();   //为自动生成的图片添加hover事件
+	}
+	img('l',imgSrc,imgName,imgDate);
+	img('r',imgSrc,imgName,imgDate);

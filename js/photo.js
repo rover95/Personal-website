@@ -47,44 +47,43 @@
 		
 
 
-	//登录框
-	// $('.all-cover img').center(400,250).resize(function(){   
-	// 	//$().getid('login').center(400,250);		
-	// })
-	R('.all-cover .close').click(function(){                	//登录框关闭·
-		R('.all-cover').css('display','none');
-		// document.documentElement.style.overflow="auto";
-	})
-	
-	R('.photo-cell').click(function(){				    		//登录框显示
-		var src=R(this).find('img').first().src;
-		R('.all-cover img').first().src=src;
-		var w=R('.all-cover img').first().width;
-		var h=R('.all-cover img').first().height;
-		var vw=document.body.clientWidth;
-		var vh=document.body.clientHeight;
-		console.log((vw/w)*0.8*h+'---'+0.9*vh)
-		R('.all-cover img').css('width',85+'vw')
-		R('.all-cover img').css('height','auto')
-		// if(h*vw<vh*w){
-		// 	R('.all-cover img').css('width',85+'vw')
-		// 	R('.all-cover img').css('height','auto')
-		// }else{
-		// 	R('.all-cover img').css('height',90+'vh')
-		// 	R('.all-cover img').css('width','auto')
-		// }
-		R('.all-cover').css('display','flex');		
-			R('.all-cover img').animate({
-				opacity:'0-100',
-				oSpeed:100,
-				oTime:20,
-				oType:0,
-				
-			})	
+//图片点击放大
+	function imgClick(){
+		R('.photo-cell').click(function(){				    		//放大图显示
+			var src=R(this).find('img').first().src;
+			R('.all-cover img').first().src=src;
+			var w=R('.all-cover img').first().width;
+			var h=R('.all-cover img').first().height;
+			var vw=document.body.clientWidth;
+			var vh=document.body.clientHeight;
+			console.log((vw/w)*0.8*h+'---'+0.9*vh)
+			R('.all-cover img').css('width',85+'vw')
+			R('.all-cover img').css('height','auto')
+			// if(h*vw<vh*w){
+			// 	R('.all-cover img').css('width',85+'vw')
+			// 	R('.all-cover img').css('height','auto')
+			// }else{
+			// 	R('.all-cover img').css('height',90+'vh')
+			// 	R('.all-cover img').css('width','auto')
+			// }
+			R('.all-cover').css('display','flex');		
+				R('.all-cover img').animate({
+					opacity:'0-100',
+					oSpeed:100,
+					oTime:20,
+					oType:0,
+					
+				})	
 
-		// document.documentElement.style.overflow="hidden";
-		R('.all-cover').first().style.overflow="scroll"
-	})
+			// document.documentElement.style.overflow="hidden";
+			R('.all-cover').first().style.overflow="scroll"
+		})
+		R('.all-cover .close').click(function(){                	//放大图关闭·
+			R('.all-cover').css('display','none');
+			// document.documentElement.style.overflow="auto";
+		})
+	}
+		
 
 
 //动态生成图片
@@ -119,6 +118,7 @@
 		html=html+R(node).html();
 		R(node).html(html);
 		imgHover();   //为自动生成的图片添加hover事件
+		imgClick();	  //为自动生成的图片添加click事件
 	}
 	img('l',imgSrc,imgName,imgDate);
 	img('r',imgSrc,imgName,imgDate);

@@ -99,7 +99,7 @@
 	// 			</figure>
 	// 		</div>`
 
-	var imgSrc='img/_DSC6707.JPG';
+	var imgSrc='../img/_DSC6707.JPG';
 	var imgName='gun';
 	var imgDate='2017-05-16';
 	function img(node,src,name,date){

@@ -128,7 +128,7 @@ Get.prototype.animate=function(obj){
 	
 		var trform=obj['trform'];   										 //旋转
 
-		var mul=obj['mul']
+		var mul=obj['mul'] 													//同步动画
 		
 		if(mul==undefined){
 			mul={};             //fuck

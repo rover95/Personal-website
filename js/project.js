@@ -19,6 +19,7 @@ R('#exe2').drag(R('#exe2 .exe-cover').last());
 //R('.program').drag(R('.pgm-head').last(),R('.program').last());		 //程序框拖拽
 
 
+var z=10;
 //双击事件打开窗口
 R('.exe-box').bind('dblclick',function(e){
 	//R('.program').css('display','block');
@@ -31,7 +32,7 @@ R('.exe-box').bind('dblclick',function(e){
 				<div class="pgm-head">
 					<div class="head-left">
 						<img src="../icon/exe1.png" alt="">
-						<p>应用程序1</p>
+						<p>应用程序${exeId}</p>
 					</div>
 					<div class="head-right">
 						<p class="execlose"></p>
@@ -54,28 +55,72 @@ R('.exe-box').bind('dblclick',function(e){
 		var num=exeId.match(/\d/)
 		num=parseInt(num[0])
 		R('#pgm'+exeId).css('left',100+num*20+'px').css('top',50+num*20+'px')
-		
+		//绑定拖拽事件
 		var n=R('.program').elements;
-		for(let i=1,len=n.length;i<=len;i++){
-			R('#pgmexe'+i).drag(R('#pgmexe'+i+' .pgm-head').last(),R('#pgmexe'+i+' .program').last());
+		for(let i=0,len=n.length;i<len;i++){
+			var id=n[i].id.match(/\d/)
+			
+			R('#pgmexe'+id[0]).drag(R('#pgmexe'+id+' .pgm-head').last(),R('#pgmexe'+id+' .program').last());
+			R('.program').click(function(){
+				R(this).css('z-index',z++)
+			})
+
+			// console.log(R('#pgmexe'+id[0]))
 		}
-		console.log(n)
+		//console.log(n)
 
 
-		//生产任务栏图标
+		//生成任务栏图标
 		var taskExe=R('.task-box').html();
 		var taskimg=R(this).find('img').first().src;
 		taskExe+=`<div id="task${exeId}" class="task-exe hover">
 						<img src="${taskimg}" alt="">
 					</div>`
 		R('.task-box').html(taskExe);
-		pgm=R('.task-box').html();
+		var taskhtml=R('.task-box').html();
+
+		//关闭窗口	
+		R('.execlose').click(function(){	
+			//获取最外层父节点
+			var parent=R(this).elements[0].parentElement.parentElement.parentElement;	
+			parent.style['display']='none';
+			//关闭任务栏图标
+			var tid=parent.id.match(/\d/);
+			R('#taskexe'+tid).css('display','none')
+		})
+		//最小化窗口
+		R('.exemin').click(function(){
+			var parent=R(this).elements[0].parentElement.parentElement.parentElement;
+			var ol=parent.getBoundingClientRect().left;
+			var ot=parent.getBoundingClientRect().top;
+			var ow=parent.offsetWidth;
+			var oh=parent.offsetHeight;
+			var tid=parent.id.match(/\d/);
+			var l=R('#taskexe'+tid).elements[0].getBoundingClientRect().left;
+			var t=R('#taskexe'+tid).elements[0].getBoundingClientRect().top;
+			R(parent).animate({
+				alter:150,
+				time:5,
+				mul:{
+					w:25,
+					h:10,
+					x:l,
+					y:t
+				},
+				fn:function(){
+					R(parent).css('display','none');
+					R(parent).css('left',ol+'px').css('top',ot+'px').css('width',ow+'px').css('height',oh+'px');
+					console.log(ol)
+				}
+			})
+			
+		})
+
 	}else{
-		R('#pgm'+exeId).css('z-index',99);
+		R('#pgm'+exeId).css('z-index',z++);
+		R('#pgm'+exeId).css('display','block');
+		R('#task'+exeId).css('display','block');
 	}
-		
-	
+			
 })
-R('.execlose').click(function(){			//关闭窗口
-	console.log(R(this))
-})
+

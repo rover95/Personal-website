@@ -67,6 +67,8 @@ body{
 	border-radius: 1px;
 	background: -moz-linear-gradient(top, rgba(155,185,210,1), rgba(185,210,235));
 	background: -webkit-linear-gradient(top, rgb(155,185,210),rgb(185,210,235));
+	box-shadow: 1px 1px 20px rgba(0,0,0,.3);
+	overflow: hidden;
 }
 .pgm-head{
 	width: 100%;

@@ -18,7 +18,7 @@ R('#exe1').drag(R('#exe1 .exe-cover').last());      //图标拖拽
 R('#exe2').drag(R('#exe2 .exe-cover').last());
 //R('.program').drag(R('.pgm-head').last(),R('.program').last());		 //程序框拖拽
 
-
+var whlt=[];    //存储将要缩小的窗口的大小，位置
 var z=10;
 //双击事件打开窗口
 R('.exe-box').bind('dblclick',function(e){
@@ -57,7 +57,7 @@ R('.exe-box').bind('dblclick',function(e){
 		R('#pgm'+exeId).css('left',100+num*20+'px').css('top',50+num*20+'px')
 		//绑定拖拽事件
 		var n=R('.program').elements;
-		for(let i=0,len=n.length;i<len;i++){
+		for(var i=0,len=n.length;i<len;i++){
 			var id=n[i].id.match(/\d/)
 			
 			R('#pgmexe'+id[0]).drag(R('#pgmexe'+id+' .pgm-head').last(),R('#pgmexe'+id+' .program').last());
@@ -73,11 +73,18 @@ R('.exe-box').bind('dblclick',function(e){
 		//生成任务栏图标
 		var taskExe=R('.task-box').html();
 		var taskimg=R(this).find('img').first().src;
-		taskExe+=`<div id="task${exeId}" class="task-exe hover">
+		taskExe+=`<div id="task${exeId}" class="task-exe">
 						<img src="${taskimg}" alt="">
 					</div>`
 		R('.task-box').html(taskExe);
-		var taskhtml=R('.task-box').html();
+		//点击任务栏最小化,还原事件
+		R('.taskbar .task-exe').click(function(e){
+			var parent=R(this).elements[0].id.match(/\d/);
+			var num=parseInt(parent);
+			parent=R('#pgmexe'+parent).elements[0];
+			taskMinMax(parent,num)
+		})
+		
 
 		//关闭窗口	
 		R('.execlose').click(function(){	
@@ -88,39 +95,130 @@ R('.exe-box').bind('dblclick',function(e){
 			var tid=parent.id.match(/\d/);
 			R('#taskexe'+tid).css('display','none')
 		})
-		//最小化窗口
+		//点击叉最小化窗口	
 		R('.exemin').click(function(){
-			var parent=R(this).elements[0].parentElement.parentElement.parentElement;
-			var ol=parent.getBoundingClientRect().left;
-			var ot=parent.getBoundingClientRect().top;
-			var ow=parent.offsetWidth;
-			var oh=parent.offsetHeight;
-			var tid=parent.id.match(/\d/);
-			var l=R('#taskexe'+tid).elements[0].getBoundingClientRect().left;
-			var t=R('#taskexe'+tid).elements[0].getBoundingClientRect().top;
-			R(parent).animate({
-				alter:150,
-				time:5,
-				mul:{
-					w:25,
-					h:10,
-					x:l,
-					y:t
-				},
-				fn:function(){
-					R(parent).css('display','none');
-					R(parent).css('left',ol+'px').css('top',ot+'px').css('width',ow+'px').css('height',oh+'px');
-					console.log(ol)
-				}
-			})
+				var parent=R(this).elements[0].parentElement.parentElement.parentElement;
+				min(parent)
+				// var parent=R(this).elements[0].parentElement.parentElement.parentElement;
+				// min(parent)
+				// var ol=parent.getBoundingClientRect().left;
+				// var ot=parent.getBoundingClientRect().top;
+				// var ow=parent.offsetWidth;
+				// var oh=parent.offsetHeight;
+				
+				// R('.taskbar').toggle(function(e){
+				// 	if(e.target.tagName=='IMG'){
+				// 		var tar=e.target.parentElement
+				// 	}else {
+				// 		var tar=e.target;
+				// 	}
+				// 	var idStr=tar.id.match(/\d/)[0];		//用来确定对应的窗口			
+				// 	R('#pgmexe'+idStr).css('display','block')
+				// 	R('#pgmexe'+idStr).animate({
+				// 		alter:150,
+				// 		time:5,
+				// 		mul:{
+				// 			w:ow,
+				// 			h:oh,
+				// 			x:ol,
+				// 			y:ot
+				// 		},
+				// 	})
+				// },function(){
+				// 	min(parent)
+				// })
 			
 		})
+		
 
-	}else{
-		R('#pgm'+exeId).css('z-index',z++);
-		R('#pgm'+exeId).css('display','block');
-		R('#task'+exeId).css('display','block');
-	}
-			
+		}else{
+			R('#pgm'+exeId).css('z-index',z++);
+			R('#pgm'+exeId).css('display','block');
+			R('#task'+exeId).css('display','block');
+		}
+
+          
+})//双击事件
+
+R('.taskbar').click(function(e){
+	e
 })
 
+   //去掉默认的contextmenu事件，否则会和右键事件同时出现。
+             document.oncontextmenu = function(e){
+                e.preventDefault();
+            };
+           // document.getElementById("exe1").onmousedown = function(e){
+           //     if(e.button ==2){
+           //          alert("你点了右键");
+           //     }else if(e.button ==0){
+           //           alert("你点了左键");
+           //       }else if(e.button ==1){
+           //          alert("你点了滚轮");
+           //       }
+           //   }
+
+
+
+
+
+
+
+
+
+
+//窗口最小化
+function min(parent){		//parent为要缩小的窗口节点
+	var ol=parent.getBoundingClientRect().left;
+	var ot=parent.getBoundingClientRect().top;
+	var ow=parent.offsetWidth;
+	var oh=parent.offsetHeight;
+	var tid=parent.id.match(/\d/);
+	var l=R('#taskexe'+tid).elements[0].getBoundingClientRect().left;
+	var t=R('#taskexe'+tid).elements[0].getBoundingClientRect().top;
+	whlt[tid]={
+		w:ow,
+		h:oh,
+		l:ol,
+		t:ot
+	}
+	console.log(whlt[tid].h)
+	R(parent).animate({
+		alter:150,
+		time:5,
+		mul:{
+			w:25,
+			h:10,
+			x:l,
+			y:t
+		},
+		fn:function(){
+			R(parent).css('display','none');
+			//R(parent).css('left',ol+'px').css('top',ot+'px').css('width',ow+'px').css('height',oh+'px');
+		}
+	})
+
+}
+
+//
+function taskMinMax(parent,num){
+	//console.log(getStyle(R(parent).elements[0],'display','toStr'))
+	if(getStyle(R(parent).elements[0],'display','toStr')=='block'){
+		min(parent)
+	}else{
+		//console.log(whlt[num].h)
+		R(parent).css('display','block')
+		R(parent).animate({
+			alter:150,
+			time:5,
+			mul:{
+				w:whlt[num].w,
+				h:whlt[num].h-20,//不知道哪里多出20px来
+				x:whlt[num].l,
+				y:whlt[num].t
+			}
+		})
+	}		
+		
+	
+}	

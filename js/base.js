@@ -367,8 +367,8 @@ Get.prototype.toggle=function(){
      //定义这个函数的目的是为了使每次点击不同对象都生成一个新的计数器count
 			var fun = function(element,args){          
 				var count=0;
-				addEvent(element,'click',function(){
-					args[count++%args.length].call(this);
+				addEvent(element,'click',function(e){
+					args[count++%args.length].call(this,e);//e传递触发事件
 				})			
 		}
 		fun(this.elements[i],arguments)	

@@ -487,13 +487,15 @@ Get.prototype.zoom=function(classN,marginX,marginY){//classN为点击可缩放�
 			if(classN==target.className){
 				var pgm=this;
 				var pb=R(pgm).find('.pgm-body').first();
-				var ox=pgm.offsetLeft+marginX;         //鼠标点击点坐标	
-				var oy=pb.offsetTop+marginY;
+				var ox=pgm.offsetLeft + marginX;         //鼠标点击点坐标	
+				var oy=pb.offsetTop+ pgm.offsetTop + marginY;
+				// console.log(pb.offsetTop)
 				document.onmousemove=function(e){
 					var nx=e.clientX;
 					var ny=e.clientY;
 					var x=nx-ox;
 					var y=ny-oy;
+					if(x<240){x=240;}
 					pgm.style.width=x+'px'; 	
 					pb.style.height=y+'px';
 				}

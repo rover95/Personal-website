@@ -22,9 +22,11 @@ var whlt=[];    //存储将要缩小的窗口的大小，位置
 var z=10;
 //双击事件打开窗口
 R('.exe-box').bind('dblclick',function(e){
-	//R('.program').css('display','block');
-	//console.log(R(this).first().id);
 	var exeId=R(this).first().id;
+	var _this=this;
+	openPgm(exeId,_this);
+})//双击事件
+function openPgm(exeId,_this){	
 	var pgm=R('.pgm-box').html()
 	//如果要生成的程序窗口不存在，则生成
 	if(!R('#pgm'+exeId).elements[0]){
@@ -65,7 +67,7 @@ R('.exe-box').bind('dblclick',function(e){
 			//提层
 			R('.program').click(function(){R(this).css('z-index',z++)})
 			//缩放功能
-			R('#pgmexe'+id[0]).zoom('pgm-zoom',10,65);
+			R('#pgmexe'+id[0]).zoom('pgm-zoom',10,0);
 
 			// console.log(R('#pgmexe'+id[0]))
 		}
@@ -74,7 +76,7 @@ R('.exe-box').bind('dblclick',function(e){
 
 		//生成任务栏图标
 		var taskExe=R('.task-box').html();
-		var taskimg=R(this).find('img').first().src;
+		var taskimg=R(_this).find('img').first().src;
 		taskExe+=`<div id="task${exeId}" class="task-exe">
 						<img src="${taskimg}" alt="">
 					</div>`
@@ -110,10 +112,9 @@ R('.exe-box').bind('dblclick',function(e){
 			R('#pgm'+exeId).css('z-index',z++);
 			R('#pgm'+exeId).css('display','block');
 			R('#task'+exeId).css('display','block');
-		}
-
-          
-})//双击事件
+		}	
+}
+	
 
 
 
@@ -121,6 +122,58 @@ R('.exe-box').bind('dblclick',function(e){
 document.oncontextmenu = function(e){
     e.preventDefault();
 };
+//右键菜单
+R('.pgm-box').bind('mouseup',function(e){
+	if(e.button ==2){//右键
+		var x=e.clientX;
+		var y=e.clientY;
+		R('#Pmenu').elements[0].style.left=x + 'px';
+		R('#Pmenu').elements[0].style.top=y + 'px';
+        R('#Pmenu').css('display','block');
+        R('#Emenu').css('display','none');
+		//刷新按钮
+        R('.f5').click(function(){
+
+        	location.reload(true);   
+        })
+        R('.Rattr').click(function(e){
+        	console.log("Design By Rover95");
+
+        })
+		console.log(R('.Rattr').elements)
+    }else if(e.button ==0){//左键
+        R('#Pmenu').css('display','none');
+    }else if(e.button ==1){//滚轮    
+    }
+})
+//程序右键菜单
+R('.exe-box').bind('mousedown',function(e){
+	if(e.button==2){
+		var x=e.clientX;
+		var y=e.clientY;
+		var _this=this;
+		R('#Pmenu').css('display','none')
+		R('#Emenu').elements[0].style.left=x + 'px';
+		R('#Emenu').elements[0].style.top=y + 'px';
+        R('#Emenu').css('display','block');
+        R('.pgm-box').click(function(){
+			R('#Emenu').css('display','none');
+        })
+        //打开按钮
+        R('#E-open').click(function(){
+			var exeId=R(_this).first().id;
+			console.log('a')
+			openPgm(exeId,_this);
+        })
+        //刷新按钮
+        R('.f5').click(function(){
+        	location.reload(true);   
+        })
+	}else {		
+		R('#Emenu').css('display','none');
+	}
+})
+
 // document.getElementById("exe1").onmousedown = function(e){
 //     if(e.button ==2){
 //          alert("你点了右键");

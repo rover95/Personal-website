@@ -228,7 +228,36 @@ body{
 	margin: 7px 15px;
 }
 
-
+.Rmenu{
+	display: none;
+	position: absolute;
+	left: 10vw;
+	top: 10px;
+	width: 220px;
+	background-color: #eee;
+	border-radius: 2px;
+	
+}
+.Rmenu ul{
+	padding: 2px;
+}
+.Rmenu li{
+	height: 25px;
+	width: 184px;
+	margin: 1px;
+	color: #999;
+	padding-left: 30px;
+	font-size: 14px;
+	background-color: #eee;
+	list-style: none;
+}
+.Rmenu li:hover{
+	background-color: #4af;
+}
+.Rmenu li a{
+	color: #222;
+	text-decoration: none;
+}
 
 
 /*模糊*/

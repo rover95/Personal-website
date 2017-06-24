@@ -479,6 +479,34 @@ Get.prototype.click=function(fn){
 	}	
 	return this;
 }
+//方法自由缩放
+Get.prototype.zoom=function(classN,marginX,marginY){//classN为点击可缩放的元素节点，marginX，Y为容器的边距
+	for(var i=0,len=this.elements.length;i<len;i++){
+		addEvent(this.elements[i],'mousedown',function(e){
+			target=e.target||e.srcElement;
+			if(classN==target.className){
+				var pgm=this;
+				var pb=R(pgm).find('.pgm-body').first();
+				var ox=pgm.offsetLeft+marginX;         //鼠标点击点坐标	
+				var oy=pb.offsetTop+marginY;
+				document.onmousemove=function(e){
+					var nx=e.clientX;
+					var ny=e.clientY;
+					var x=nx-ox;
+					var y=ny-oy;
+					pgm.style.width=x+'px'; 	
+					pb.style.height=y+'px';
+				}
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+				}
+			}else{
+				//console.log(target.className)
+			}
+		})
+	}
+}
 
 
 

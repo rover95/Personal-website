@@ -175,12 +175,24 @@ R('.exe-box').bind('mousedown',function(e){
 //右键刷新
 R('.f5').click(function(){
 	location.reload(true);   
-	
 })
 //右键属性
 R('.Rattr').click(function(e){
 	alert("Design By Rover95")
 })
+//右键全屏
+R('#fullP').click(function(){
+	if (desk.requestFullscreen) {   			//W3C
+		desk.requestFullscreen(); 
+	}else if(desk.mozRequestFullScreen){		//firefox
+		desk.mozRequestFullScreen(); 
+	}else if(desk.webkitRequestFullScreen){		//chrome
+		desk.webkitRequestFullScreen(); 
+	}else if(elem.msRequestFullscreen){			//IE11
+		elem.msRequestFullscreen();
+	}
+})
+
 
 //任务栏时间
 var date=new Date();

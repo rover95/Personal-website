@@ -8,6 +8,10 @@
 	<link rel="stylesheet" href="../css/blog.css">
 	<link rel="stylesheet" href="../css/csshake.css">
 	<link rel="stylesheet" href="../css/contact-icon.css">
+	<!-- <link rel="stylesheet" href="../css/highlight/railscasts.css"> -->
+	<link rel="stylesheet" href="../css/highlight/github-gist.css">
+	<link rel="stylesheet" href="../css/prettify.css">
+	
 </head>
 <body>
 	<header>
@@ -39,35 +43,21 @@
 		
 		<aside>
 			<div class="text-box">
-				<h3>相关</h3>
-				<ul>
-					<li>1.马来西亚飞机失联</li>
-					<li>2.现在流行这种美</li>
-					<li>3.男子捡手机后猜对密码</li>
-					<li>4.最后一吻成回忆</li>
-					<li>5.赵又廷深夜食堂</li>
+				<h3>目录</h3>
+				<ol>
+					<li>JavaScript</li>
+					<li>CSS</li>
+					<li>HTML</li>
+					<li>计算机基础理论</li>
+					<li>日常问题</li>
 				</ul>
 			</div>
+
 			<div class="text-box">
-				<h3>相关</h3>
-				<ul>
-					<li>1.马来西亚飞机失联</li>
-					<li>2.现在流行这种美</li>
-					<li>3.男子捡手机后猜对密码</li>
-					<li>4.最后一吻成回忆</li>
-					<li>5.赵又廷深夜食堂</li>
-				</ul>
+				<h3>简介</h3>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;文章主要记录平时项目中遇到的问题以及相关的解决办法，名为博客实际上更类似于个人的问题笔记。文中内容大多来自互联网，自己归纳整理有时会加上相关见解，因此可能存在许多错误与纰漏，内容仅供参考</p>
 			</div>
-			<div class="text-box">
-				<h3>相关</h3>
-				<ul>
-					<li>1.马来西亚飞机失联</li>
-					<li>2.现在流行这种美</li>
-					<li>3.男子捡手机后猜对密码</li>
-					<li>4.最后一吻成回忆</li>
-					<li>5.赵又廷深夜食堂</li>
-				</ul>
-			</div>
+			
 
 		</aside>
 
@@ -87,49 +77,68 @@
 					<div class="content">
 						
 						<section>
-							<p>1. 加meta viewport标签禁用缩放自适应</p>
-							<p>2. 确定核心布局，布局保持简单干净，减少无关紧要的元素</p>
-							<p>3. 设计栅格布局方案
-								Twitter Bootstrap 倡导的12分制网格，为2分、3分、4分甚至6分布局，或是不均等分的布局</p>
-							<p>4. 满足主要断点(320px 480px 640px 768px 1024px等),针对不同情况应用不同方案</p>
-							<p>5. 少用内联元素、绝对定位，百分比拉伸需谨慎勿过度变形</p>
-							<p>6. 慎用固定值设置图片和内容元素，图片应可伸缩，并限制最大宽</p>
-							<p>7. 考虑频幕分辨率</p>
-							<p>8. 以及非核心模块的降级和取舍</p>
-							
-							
-							
-							
-							
-							
+<ol>
+	<li>加meta viewport标签禁用缩放自适应<pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /></code></pre></li>
+	<li> 确定核心布局，布局保持简单干净，减少无关紧要的元素</li>
+	<li>设计栅格布局方案Twitter Bootstrap 倡导的12分制网格，为2分、3分、4分甚至6分布局，或是不均等分的布局</li>
+	<li>满足主要断点<code>320px 480px 640px 768px 1024px</code>等,针对不同情况应用不同方案</li>
+	<li>少用内联元素、绝对定位，百分比拉伸需谨慎勿过度变形</li>
+	<li>慎用固定值设置图片和内容元素，图片应可伸缩，并限制最大宽</li>
+	<li>考虑频幕分辨率</li>
+	<li>以及非核心模块的降级和取舍</li>
+</ul>
+	
+						</section>
+					</div>
+				</div>
+			</div>
+				<div class="text-box">
+				<div class="text-head">
+					<img src="../icon/unb.png" alt="头像" class="img-head">
+					<h3>CSS书写规范</h3>
+					<p class="text-date">2017.6.18</p>
+					<div class="lable-box">
+						<!-- <span class="cell bg-r">JS</span> -->
+						<span class="cell bg-b">CSS</span>
+						<!-- <span class="cell bg-g">HTML</span> -->
+					</div>
+				</div>
+				<div class="text-body">
+					<div class="content">
+						
+						<section>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;无意中看到一种叫做"面向属性的CSS命名方式"，原理是将具体的属性拆分例如：<code>{left:50px}</code>、<code>margin-right:10px</code>,直接写出<code>.l</code>、<code>.mr</code>虽然在某些场合下可能不太实用，但思路很巧妙。</p>
+<ol>
+	<li>表现与结构完全分离，代码中不涉及任何的表现元素，如<code>style</code>、<code>font</code>、<code>bgColor</code>、<code>border</code>等
+	除非特殊需要，不在dom中写css 如: <br><code>&lt;div style="xx">//尽量避免</code></li>
+	<li><code>&lt;h1></code>到<code>&lt;h5></code>的定义，应遵循从大到小的原则，体现文档的结构，并有利于搜索引擎的查询。</li>
+	<li>给图片加上alt标签</li>
+	<li>尽量使用英文命名原则</li>
+	<li>js引入和本页面的实现全部写在 <code>&lt;/body></code>前,特殊需要的js代码可写在<code>&lt;head></code>里</li>
+	<li>DOM的id命名，一律以类型开头，比如 div 的 id 为: div_xxx , span 的 id  为 span_xxx </li>
+	<li>DOM的class命名 以class开头 如 class_title ,...</li>
+</ol>					
 							
 						</section>
 					</div>
 				</div>
+
 					
 				<div class="text-foot">
 					<p><span id="a"></span></p>
 					<p><span id="b"></span></p>
 					<p><span id="c"></span></p>
-				</div>
-					
+				</div>					
 			</div>
+
 			<div class="text-box">
 				<div class="text-body">
 					<img src="../icon/unb.png" alt="头像" class="img-head">
 					<div class="content">
 						<h3>进程与线程</h2>
 						<section>
-							
-							"进程"是具有一定独立功能的程序关于某个数据集合上的一次运行活动,进程是系统进行资源分配和调度的一个独
-							立单位
-							"线程"是进程的一个实体,是CPU调度和分派的基本单位,它是比进程更小的能独立运行的基本单位
-							1.一个线程可以创建和撤销另一个线程;同一个进程中的多个线程之间可以并发执行
-							2.进程有独立的地址空间，一个进程崩溃后，在保护模式下不会对其它进程产生影响
-							3.线程有自己的堆栈和局部变量，但线程之间没有单独的地址空间，一个线程死掉就等于整个进程死掉
-							4.对于一些要求同时进行并且又要共享某些变量的并发操作，只能用线程，不能用进程
-							5.多进程的程序要比多线程的程序健壮，但在进程切换时，耗费资源较大，效率要差一些
-						</section>
+
+					</section>
 					</div>
 				</div>
 					
@@ -184,7 +193,16 @@
 		<p>Copyright © 2017 Rover95. All rights reserved.</p>
 	</footer>	
 
-	
+<script src="../js/highlight.pack.js"></script>
+<script src="../js/prettify.js"></script>
+<script>
+	// var pre=document.getElementsByTagName('pre');
+	// for(var i=0,len=pre.length;i<len;i++){
+	// 	pre[i].className='prettyprint';
+	// }
+	// prettyPrint();
+	hljs.initHighlightingOnLoad();
+</script>	
 
 </body>
 </html>

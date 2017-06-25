@@ -66,12 +66,15 @@ aside{
 	background-color: #fff;
 	
 }
+.text-box{
+	padding: 16px 18px 20px;  
+}
 .text-box ul{
 	padding: 16px 18px 10px; 
 }
 .text-box li{
 	list-style:none;
-	height: 20px;
+	margin: 5px 0;
 	margin-bottom: 7px;
 }
 .text-body{
@@ -79,7 +82,7 @@ aside{
 }
 .img-head{
 	/*position: absolute;*/
-	margin: 3px 0;
+	margin: 0 0;
 	width: 50px;
 	height: 50px;
 }
@@ -89,17 +92,17 @@ aside{
 }
 .text-head h3{
 	position:absolute;
-	top: 20px;
+	top: 15px;
 	left: 80px;
 }
 .text-date{
 	position:absolute;
-	top: 50px;
+	top: 45px;
 	left: 80px;
 }
 .lable-box{
 	position: absolute;
-	top: 48px;
+	top: 43px;
 	left: 175px;
 	height: 20px;
 
@@ -162,16 +165,52 @@ aside{
 	padding-left: 10px;	
 }
 .content p{
-	display: block;
 	margin-top: 10px;
 }
-
+.content ol{
+	list-style-type: decimal;
+	margin: 0 30px 0 20px;
+}
+.content li{
+	/*display: inline-block;*/
+	list-style-type: decimal;
+	margin: 15px 0;
+}
+.content img{
+	width: 100%;
+}
 
 
 aside h3{
-	padding: 10px 10px 10px;
+	padding: 0px 10px 10px;
 	border-bottom: 1px solid #ddd;
 }
+aside p{
+	font-size: 14px;
+	line-height: 25px;
+}
+aside li{
+	cursor: pointer;
+}
+aside li:hover{
+	background-color: #ddd;
+}
+
+code{
+	padding: 0px 4px;
+	font-family: Menlo,Monaco,Consolas,Courier New,monospace;
+	background-color: #e1e6e6;
+	border: none;
+	font-size: 14px;
+	color: #657b83;
+	border-radius: 4px;
+	white-space: pre-wrap;
+}
+
+
+	
+
+
 
 
 @media  screen  and (max-width: 768px) {
@@ -185,8 +224,19 @@ aside h3{
 		padding: 0;
 	}
 	.img-head{
-		display: none;
-		
+		display: none;	
+	}
+	.text-head h3{
+		left: 10px;
+	}
+	.text-date{
+		left: 10px;
+	}
+	.lable-box{
+		left: 105px;
+	}
+	.content{
+		margin-top: 55px;
 	}
 
 }

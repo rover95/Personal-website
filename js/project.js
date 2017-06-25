@@ -182,6 +182,18 @@ R('.Rattr').click(function(e){
 	alert("Design By Rover95")
 })
 
+//任务栏时间
+var date=new Date();
+var ymd=date.getFullYear()+'年'+date.getMonth()+'月'+date.getDate()+'日';
+var timeStr=date.toTimeString().substring(0,5);
+R('.task-date p').html(timeStr);
+R('.task-date').first().title=ymd;	
+setInterval(function(){
+	date=new Date();
+	timeStr=date.toTimeString().substring(0,5);
+	R('.task-date p').html(timeStr);
+},10000)
+
 //ajax刷新页面
 // ajax({
 // 	type:'get',

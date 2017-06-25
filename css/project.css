@@ -227,6 +227,23 @@ body{
 	height: 16px;
 	margin: 7px 15px;
 }
+.task-date{
+	position: absolute;
+	right: 0;
+	width: 80px;
+	height: 30px;
+	border-left: 1px solid #222;
+	box-shadow: inset 1px 0 1px #ccc;
+}
+.task-date p{
+	height: 14px;
+	width: 80px;
+	margin: 8px 0;
+	font-size: 13px;
+	text-align: center;
+	color: #ddd;
+	cursor: default;
+}
 
 .Rmenu{
 	display: none;
@@ -235,6 +252,7 @@ body{
 	top: 10px;
 	width: 220px;
 	background-color: #eee;
+	border: 1px solid #bbb;
 	border-radius: 2px;
 	
 }

@@ -28,6 +28,8 @@ R('.exe-box').bind('dblclick',function(e){
 })//双击事件
 function openPgm(exeId,_this){	
 	var pgm=R('.pgm-box').html()
+	var pageurl=_this.attributes["pageurl"].value;
+	console.log(_this.attributes["pageurl"].nodeValue)
 	//如果要生成的程序窗口不存在，则生成
 	if(!R('#pgm'+exeId).elements[0]){
 		pgm+=`<div id="pgm${exeId}" class="program">
@@ -50,7 +52,9 @@ function openPgm(exeId,_this){
 						<li>帮助</li>
 					</ul>
 				</div>
-				<div class="pgm-body"></div>
+				<div class="pgm-body">
+					<iframe src="${pageurl}" frameborder="0"></iframe>
+				</div>
 				<div class="pgm-zoom"></div>
 			</div><br/>`
 		R('.pgm-box').html(pgm);
@@ -122,6 +126,8 @@ function openPgm(exeId,_this){
 document.oncontextmenu = function(e){
     e.preventDefault();
 };
+
+
 //右键菜单
 R('.pgm-box').bind('mouseup',function(e){
 	if(e.button ==2){//右键
@@ -131,16 +137,9 @@ R('.pgm-box').bind('mouseup',function(e){
 		R('#Pmenu').elements[0].style.top=y + 'px';
         R('#Pmenu').css('display','block');
         R('#Emenu').css('display','none');
-		//刷新按钮
-        R('.f5').click(function(){
 
-        	location.reload(true);   
-        })
-        R('.Rattr').click(function(e){
-        	console.log("Design By Rover95");
+        
 
-        })
-		console.log(R('.Rattr').elements)
     }else if(e.button ==0){//左键
         R('#Pmenu').css('display','none');
     }else if(e.button ==1){//滚轮    
@@ -173,16 +172,24 @@ R('.exe-box').bind('mousedown',function(e){
 		R('#Emenu').css('display','none');
 	}
 })
+//右键刷新
+R('.f5').click(function(){
+	location.reload(true);   
+	
+})
+//右键属性
+R('.Rattr').click(function(e){
+	alert("Design By Rover95")
+})
 
-// document.getElementById("exe1").onmousedown = function(e){
-//     if(e.button ==2){
-//          alert("你点了右键");
-//     }else if(e.button ==0){
-//           alert("你点了左键");
-//       }else if(e.button ==1){
-//          alert("你点了滚轮");
-//       }
-//   }
+//ajax刷新页面
+// ajax({
+// 	type:'get',
+// 	url:'photo.html',
+// 	success:function(data){
+// 		R('.ifr-box').html(data)
+// 	}
+// })
 
 
 

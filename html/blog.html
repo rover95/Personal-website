@@ -26,6 +26,15 @@
 			</ul>
 		</nav>
 		<img src="../icon/menu.png" alt="menu" class="min-nav">
+		<div class="head-menu">
+			<ul>
+				<li><a href="../index.html" class="shake">HOME</a></li>
+				<li><a href="blog.html" class="shake shake-constant">BLOG</a></li>
+				<li><a href="photo.html" class="shake">PHTOT</a></li>
+				<li><a href="blog.html" class="shake">RESUME</a></li>
+				<li><a href="project.html" class="shake">PROJECT</a></li>
+			</ul>
+		</div>
 	</header>
 
 	<div class="blog-head">
@@ -564,6 +573,12 @@
 		R(p).find('.open-a').css('display','block');
 		this.style.display="none";
 		box.style["max-height"]='150px';
+	})
+	//相应菜单按钮
+	R('.min-nav').toggle(function(){
+		R('.head-menu').css('display','block')
+	},function(){
+		R('.head-menu').css('display','none')
 	})
 </script>	
 

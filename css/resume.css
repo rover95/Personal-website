@@ -1,0 +1,112 @@
+
+body{
+	margin: 0;
+	padding: 0;
+}
+a{
+	color: #19b;
+}
+header{
+	position: absolute;
+	top: 0;
+	background-color: rgba(0,0,0,0);
+	box-shadow: 0 1px 10px rgba(0,0,0,0);
+}
+nav a{
+	font-size: 14px;
+	font-weight: bolder;
+	color: #222;
+}
+::-webkit-scrollbar{
+	width: 0px;
+	background-color: rgba(0,0,0,0);
+}
+.scroll-out{
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+.scroll-in{
+	position: absolute; 
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.m-body{
+	width: 100vw;
+	height: 100vh;
+}
+.page{
+	width: 100vw;
+	height: 100vh;
+}
+.p1{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background: url(../img/bg-me.jpg) no-repeat 50% 100%;
+	background-size: auto 100%;
+}
+.p-cover{
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,.5);
+}
+.name{
+	position: absolute;
+	top: 60vh;
+	left: 0vw;
+	width: 35vh;
+	/*height: 20vh;*/
+	color: #fff;
+	font-size: 6vh;
+/*	border: 5px solid #eee;*/
+	text-align: center;
+	background-color: rgba(0,0,0,.7);
+	
+}
+.n1{
+
+}
+.n2{
+	font-size: 3vh;
+}
+.n3{
+	font-size: 6vh;
+}
+
+
+.l{
+	position: absolute;
+	left: 0;
+	width: 50vw;
+	height: 100vh;
+	background-color: #acf;
+}
+.r{
+	position: absolute;
+	right: 0;
+	width: 50vw;
+	height: 100vh;
+	background-color: #fca;
+}
+
+
+
+
+
+
+
+.p3{
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+.download{
+	margin: 0 auto;
+	text-align: center;
+	cursor: pointer;
+}

@@ -5,6 +5,9 @@ body{
 	background-color: #ddd;
 	padding-top: 0;
 }
+a{
+	color: #19b;
+}
 header{
 	position: absolute;
 	background-color: rgba(0,0,0,0);
@@ -22,7 +25,7 @@ header a{
 	margin: 0 auto;
 	flex-direction:row;
 	justify-content:center;
-	max-width: 1000px;
+	max-width: 1500px;
 }
 article{
 	margin-top:20px; 
@@ -60,15 +63,14 @@ aside{
 	z-index: 9;
 }
 .text-box{
+	position: relative;
 	margin: 10px auto;
 	box-shadow:0 0 2px rgba(0,0,0,.1); 
 	border-radius: 2px;
 	background-color: #fff;
 	
 }
-.text-box{
-	padding: 16px 18px 20px;  
-}
+
 .text-box ul{
 	padding: 16px 18px 10px; 
 }
@@ -78,13 +80,31 @@ aside{
 	margin-bottom: 7px;
 }
 .text-body{
+	position: relative;
 	padding: 10px;
+	margin-bottom: 50px;
+	max-height: 150px;
+	overflow: hidden;
+}
+.open{
+	position: absolute;
+	bottom: 50px;
+	width: 100%;
+	text-align: center;
+	
+}
+.open p{
+	margin: 0 auto;
+	width: 100px;
+	color: #17f;
+	cursor: pointer;
 }
 .img-head{
 	/*position: absolute;*/
 	margin: 0 0;
 	width: 50px;
 	height: 50px;
+	border-radius: 10px;
 }
 .text-head{
 	position: relative;
@@ -162,10 +182,11 @@ aside{
 	background-size: 14px 14px;
 }
 .content{
-	padding-left: 10px;	
+	padding:0 10px;	
 }
 .content p{
 	margin-top: 10px;
+	line-height: 30px;
 }
 .content ol{
 	list-style-type: decimal;
@@ -179,11 +200,17 @@ aside{
 .content img{
 	width: 100%;
 }
+.pr{
+	text-align: right;
+}
 
 
 aside h3{
 	padding: 0px 10px 10px;
 	border-bottom: 1px solid #ddd;
+}
+aside .text-box{
+	padding: 16px 18px 20px;  
 }
 aside p{
 	font-size: 14px;
@@ -205,6 +232,7 @@ code{
 	color: #657b83;
 	border-radius: 4px;
 	white-space: pre-wrap;
+	
 }
 
 

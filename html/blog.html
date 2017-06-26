@@ -22,14 +22,14 @@
 				<li><a href="blog.html" class="shake-slow shake-constant shake-constant--hover">BLOG</a></li>
 				<li><a href="photo.html" class="shake">PHOTO</a></li>
 				<li><a href="resume.html" class="shake">RESUME</a></li>
-				<li><a href="../index.html" class="shake">PROJECT</a></li>
+				<li><a href="project.html" class="shake">PROJECT</a></li>
 			</ul>
 		</nav>
 		<img src="../icon/menu.png" alt="menu" class="min-nav">
 	</header>
 
 	<div class="blog-head">
-		<img src="../img/b.jpg" alt="头像" class="round">
+		<img src="../icon/head.png" alt="头像" class="round">
 		<p class="blog-user">ROVER95</p>
 		<div class="icon-box">
 			<a href="http://weibo.com/u/5366939550" class="icon-cell bg-r icon-xinlang"></a>
@@ -62,13 +62,95 @@
 		</aside>
 
 		<article>
+
 			<div class="text-box">
 				<div class="text-head">
-					<img src="../icon/unb.png" alt="头像" class="img-head">
-					<h3>响应式布局的注意点</h3>
+					<img src="../icon/head.png" alt="头像" class="img-head">
+					<h3>ES6常用特性</h3>
 					<p class="text-date">2017.6.18</p>
 					<div class="lable-box">
 						<span class="cell bg-r">JS</span>
+						<span class="cell bg-b">CSS</span>
+						<span class="cell bg-g">HTML</span>
+					</div>
+				</div>
+				<div class="text-body">
+					<div class="content">					
+						<section>
+							<p>ES6已经提出几年了，今年6月好像ES8也出来了，可能出于习惯或者兼容性问题平常使用的主要还是ES5标准为主，但其中的几个新标准还是很好用的，尤其是'Template String'，实在是太好用了，动态生成网页的时候再也不用一截一截拼字符串了。下面整理了几个常用的ES6新特性</p>
+<pre><code>
+
+<h4>'Template String'</h4>	模板字符串('Template String')是增强版的字符串，用反引号(`)标识，它可以当作普通字符串使用，
+	也可以用来定义多行字符串，更重要的可以在字符串中使用 ${abc} 嵌入变量
+	$('#a').html(`this is a &li;h1>${basket}</h1>,that is another&li;em>${basket}</em>`)
+
+<h4>'let'</h4>	声明块作用域,主要用于条件或循环语句中：
+	for(let i=0;i&lt;10;i++){
+		//do something 
+	}
+	console.log(i) 	//undefined
+
+<h4>'const'</h4>声明常量 
+
+<h4>'class, extends, super'</h4>	class 定义一个类，constructor()构造方法
+	class 之间可以使用 extends 关键字实现继承class Cat extends Animal{}
+	子类需要在constructor中使用 super() 使this指向父类的this指针。
+
+<h4>'arrow function'</h4>	function(i){ return i + 1; } //ES5
+	(i) => i + 1 //ES6
+	=>前是传入参数，=>后是返回值，或者{}包裹的代码块，如果返回对象则加小括号({...})
+	箭头函数时，函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象
+	箭头函数没有它自己的this值，箭头函数内的this值继承自外围作用域。
+	也不能用call()、apply()、bind()这些方法去改变this的指向
+	箭头函数不会获取它们自己的arguments对象
+	一些特点
+	1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+	2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
+	3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用Rest参数代替。
+	4）不可以使用yield命令，因此箭头函数不能用作Generator函数。
+		this指向的固定化，并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数
+		根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，
+		所以也就不能用作构造函数。
+
+<h4>'destructuring'</h4>	ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）
+	let cat = 'ken'
+	let dog = 'lili'
+	let zoo = {cat, dog} //{cat: "ken", dog: "lili"}
+
+<h4>'rest'</h4>	function t(...abc){console.log(abc);}
+	t(1,2,3,4,5,6)
+	abc可以用操作数组的方法操作
+
+<h4>'default'</h4>	函数参数默认值 function(type='abc')
+
+<h4>'import export'</h4>	import用于在一个模块中加载另一个含有export接口的模块
+	export用于对外输出本模块变量的接口
+	也就是说使用export命令定义了模块的对外接口以后，其他JS文件就可以通过import命令加载这个模块
+</code></pre>
+						</section>						
+					</div>
+				</div>
+				<div class="open">
+					<p class="open-a">展开全部</p>
+					<p class="close-a" style="display:none">收起</p>
+				</div>
+					
+				<div class="text-foot">
+					<p><span id="a"></span></p>
+					<p><span id="b"></span></p>
+					<p><span id="c"></span></p>
+				</div>	
+			</div> 	<!-- text-box -->
+			
+
+
+			<div class="text-box">
+				<div class="text-head">
+					<img src="../icon/head.png" alt="头像" class="img-head">
+					<h3>响应式布局的注意点</h3>
+					<p class="text-date">2017.6.18</p>
+					<div class="lable-box">
+						<!-- <span class="cell bg-r">JS</span> -->
 						<span class="cell bg-b">CSS</span>
 						<span class="cell bg-g">HTML</span>
 					</div>
@@ -88,13 +170,25 @@
 	<li>以及非核心模块的降级和取舍</li>
 </ul>
 	
-						</section>
+						</section>						
 					</div>
+
 				</div>
-			</div>
+				<div class="open">
+					<p class="open-a">展开全部</p>
+					<p class="close-a" style="display:none">收起</p>
+				</div>
+					
+				<div class="text-foot">
+					<p><span id="a"></span></p>
+					<p><span id="b"></span></p>
+					<p><span id="c"></span></p>
+				</div>	
+			</div> 	<!-- text-box -->
+
 				<div class="text-box">
 				<div class="text-head">
-					<img src="../icon/unb.png" alt="头像" class="img-head">
+					<img src="../icon/head.png" alt="头像" class="img-head">
 					<h3>CSS书写规范</h3>
 					<p class="text-date">2017.6.18</p>
 					<div class="lable-box">
@@ -107,23 +201,91 @@
 					<div class="content">
 						
 						<section>
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;无意中看到一种叫做"面向属性的CSS命名方式"，原理是将具体的属性拆分例如：<code>{left:50px}</code>、<code>margin-right:10px</code>,直接写出<code>.l</code>、<code>.mr</code>虽然在某些场合下可能不太实用，但思路很巧妙。</p>
+						<p>查找了网上普遍认同的一些CSS命名规则，挑选了一些个人觉得实用的整理如下：</p><br>
 <ol>
+	<li>CSS书写顺序：位置属性-->大小-->文字系列-->背景-->其他</li>
 	<li>表现与结构完全分离，代码中不涉及任何的表现元素，如<code>style</code>、<code>font</code>、<code>bgColor</code>、<code>border</code>等
 	除非特殊需要，不在dom中写css 如: <br><code>&lt;div style="xx">//尽量避免</code></li>
 	<li><code>&lt;h1></code>到<code>&lt;h5></code>的定义，应遵循从大到小的原则，体现文档的结构，并有利于搜索引擎的查询。</li>
-	<li>给图片加上alt标签</li>
-	<li>尽量使用英文命名原则</li>
-	<li>js引入和本页面的实现全部写在 <code>&lt;/body></code>前,特殊需要的js代码可写在<code>&lt;head></code>里</li>
-	<li>DOM的id命名，一律以类型开头，比如 div 的 id 为: div_xxx , span 的 id  为 span_xxx </li>
-	<li>DOM的class命名 以class开头 如 class_title ,...</li>
-</ol>					
+	<li>NEC规范<pre><code>
+1.分类的命名方法：使用单个字母+"-"为前缀
+布局（grid）（.g-）；模块（module）（.m-）；元件（unit）（.u-）；功能（function）（.f-）；皮肤（skin）（.s-）；状态（.z-）。特殊：.j-将被专用于JS获取节点，请勿使用.j-定义样式。
+<br>2.后代选择器命名
+&nbsp;&nbsp;1)约定不以单个字母+"-"为前缀且长度大于等于2的类选择器为后代选择器，如：.item为m-list模块里的每一个项，.text为m-list模块里的文本部分：.m-list .item{}.m-list .text{}。
+&nbsp;&nbsp;2)一个语义化的标签也可以是后代选择器，比如：.m-list li{}。
+&nbsp;&nbsp;3)不允许单个字母的类选择器出现，原因详见下面的“模块和元件的后代选择器的扩展类”。
+通过使用后代选择器的方法，你不需要考虑他的命名是否已被使用，因为他只在当前模块或元件中生效，同样的样式名可以在不同的模块或元件中重复使用，互不干扰；在多人协作或者分模块协作的时候效果尤为明显！
+后代选择器不需要完整表现结构树层级，尽量能短则短。
+注：后代选择器不要在页面布局中使用，因为污染的可能性较大；
+<br>3.命名应简约而不失语义
+/* 反对：表现化的或没有语义的命名 */
+.m-abc .green2{}
+.g-left2{}
+/* 推荐：使用有语义的简短的命名 */
+.m-list .wrap2{}
+.g-side2{}
+<br>4.相同语义的不同类命名
+方法：直接加数字或字母区分即可（如：.m-list、.m-list2、.m-list3等，都是列表模块，但是是完全不一样的模块）。
+其他举例：.f-fw0、.f-fw1、.s-fc0、.s-fc1、.m-logo2、.m-logo3、u-btn、u-btn2等等。
+<br>5.防止污染和被污染
+当模块或元件之间互相嵌套，且使用了相同的标签选择器或其他后代选择器，那么里面的选择器就会被外面相同的选择器所影响。
+所以，如果你的模块或元件可能嵌套或被嵌套于其他模块或元件，那么要慎用标签选择器，必要时采用类选择器，并注意命名方式，可以采用.m-layer .layerxxx、.m-list2 .list2xxx的形式来降低后代选择器的污染性。
+	</code></pre></li>
+	<li>命名的一些细节<pre><code>
+给图片加上alt标签
+尽量使用 class 不要用 id 
+去掉小数点前的“0” ，如："rgba(0,0,0,.5)"
+尽量使用英文命名原则，并合理简写
+颜色采用16进制简写，如： "#fff"
+使用 "-" 代替 "_"，如：".g-title"
+	</code></pre></li>
+</ol>
+<p>附上一些常规命名
+<pre><code>
+头：header　　
+内容：content/container　　
+尾：footer　　
+导航：nav　　
+侧栏：sidebar　　
+栏目：column　　
+登录条：loginbar　　
+标志：logo　　
+页面主体：main　　
+子导航：subnav　　
+菜单：menu　　
+子菜单：submenu　　
+搜索：search　　
+页脚：footer　　
+版权：copyright　　
+内容：content　　
+文章列表：list　　
+功能区：shop 
+</code></pre>
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;无意中看到一种叫做"面向属性的CSS命名方式"，原理是将具体的属性拆分例如：<code>{left:50px}</code>、<code>margin-right:10px</code>,直接写出<code>.l</code>、<code>.mr</code>虽然在某些场合下可能不太实用，但思路很巧妙。其原因主要体现在以下三点：
+<ol>
+	<li><h4>限制重用</h4>我们会使用层级(#test .test)，会使用标签(ul.test)，可能是习惯(没多想)，或是为了避免冲突，你限制越多，越抑制了CSS的重用性</li>
+	<li><h4>CSS文件大小</h4>简写选择器可以节省许多存储空间（1~2kb?）</li>
+	<li><h4>降低了渲染效率</h4> 《高性能网站进阶指南》一书曾提到CSS的渲染方式是“从右往左”渲染的，就拿#test ul{}举例，
+先渲染页面上所有的ul标签，再去寻找id为test的元素,所以，CSS命名，只要出现了层级，出现了标签，
+就是一次额外的渲染，层级越多，渲染的开销也就越大，这就是为什么一些前辈的文章会建议要尽量避免过深
+的层级。</li>
+</ol>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简单总结来说就是，精简高效的CSS命名的关键字有“分离”，“统一前缀”，方法为“面向属性的命名”，准则为“无层级、无标签”。其中，“分离”是“面向属性命名”的基础。“面向属性命名”和“无层级、无标签”属于两个不同的系列，一个针对短命名属性，一个针对长命名属性。但是，两个又互相依存。没有“面向属性命名”，“无层级、无标签”命名最后是以不堪重负，HTML膨胀致死结局。而仅仅是“面向属性命名”，前端开发人员会因维护过劳喷血而死。总之，两者缺一不可。
+</p>
+<p class="pr">参考资料： <a href="http://nec.netease.com/standard/css-sort.html"  target="_blank">网易NEC规范</a>
+<br>
+<a href="http://www.zhangxinxu.com/wordpress/2010/09/精简高效的css命名准则方法/"  target="_blank">张鑫旭博客</a>
+<br><a href="https://www.zhihu.com/question/19586885"  target="_blank">知乎</a></p>					
 							
 						</section>
 					</div>
 				</div>
 
-					
+				<div class="open">
+					<p class="open-a">展开全部</p>
+					<p class="close-a" style="display:none">收起</p>
+				</div>
 				<div class="text-foot">
 					<p><span id="a"></span></p>
 					<p><span id="b"></span></p>
@@ -131,50 +293,228 @@
 				</div>					
 			</div>
 
-			<div class="text-box">
-				<div class="text-body">
-					<img src="../icon/unb.png" alt="头像" class="img-head">
-					<div class="content">
-						<h3>进程与线程</h2>
-						<section>
-
-					</section>
-					</div>
-				</div>
-					
-				<div class="text-foot">
-					<p><span id="a"></span></p>
-					<p><span id="b"></span></p>
-					<p><span id="c"></span></p>
-				</div>
-					
-			</div>
-
-			<div class="text-box">
-				<div class="text-body">
-					<img src="../icon/unb.png" alt="头像" class="img-head">
-					<div class="content">
-						<h3>第二条</h2>
-						<section>
-							进程与线程
-							"进程"是具有一定独立功能的程序关于某个数据集合上的一次运行活动,进程是系统进行资源分配和调度的一个独
-							立单位
-							"线程"是进程的一个实体,是CPU调度和分派的基本单位,它是比进程更小的能独立运行的基本单位
-							1.一个线程可以创建和撤销另一个线程;同一个进程中的多个线程之间可以并发执行
-							2.进程有独立的地址空间，一个进程崩溃后，在保护模式下不会对其它进程产生影响
-							3.线程有自己的堆栈和局部变量，但线程之间没有单独的地址空间，一个线程死掉就等于整个进程死掉
-							4.对于一些要求同时进行并且又要共享某些变量的并发操作，只能用线程，不能用进程
-							5.多进程的程序要比多线程的程序健壮，但在进程切换时，耗费资源较大，效率要差一些
-						</section>
-					</div>
-				</div>
-					
-				<div class="text-foot">
-					<p><span id="a"></span></p>
-					<p><span id="b"></span></p>
-					<p><span id="c"></span></p>
-				</div>
 			
+
+			<div class="text-box">
+				<div class="text-head">
+					<img src="../icon/head.png" alt="头像" class="img-head">
+					<h3>this的指向</h3>
+					<p class="text-date">2017.6.18</p>
+					<div class="lable-box">
+						<span class="cell bg-r">JS</span>
+						<!-- <span class="cell bg-b">CSS</span>
+						<span class="cell bg-g">HTML</span> -->
+					</div>
+				</div>
+				<div class="text-body">
+					<div class="content">					
+						<section>
+						<p>this的指向是一个很容易令人混淆的事情，尤其是在写那种有很多嵌套的事件函数，这点我深有体会。很多有需要使用<code>var _this=this</code>这样的方法传递this，听说使用ES6中的箭头函数可以自动绑定父级this指针，这个就以后讨论。下面几点有助于理解this指针指向</p>
+<ol>
+	<li>this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象</li>
+	<li>如果一个函数中有this，这个函数中包含多个对象，尽管这个函数是被最外层的对象所调用，this指向的也只是它上一级的对象</li>
+	<li>如果一个函数中有this，这个函数有被上一级的对象所调用，那么this指向的就是上一级的对象</li>
+	<li>如果一个函数中有this，但是它没有被上一级的对象所调用，那么this指向的就是window（非严格模式）</li>
+	<li>new关键字可以改变this的指向,this指向该构造器函数实例出来的对象</li>
+	<li>apply、call、bind方法<br>
+			使用bind()改变上下文环境之后并非立即执行，而是在回调执行的时候，使用 bind() 方法。
+			而 apply/call 则会立即执行函数；
+			其中bind()方法返回函数副本。比如<code>fun.apply()</code>直接执行，而bind需要加括号才能执行<code>bind()()</code>
+			</li>
+	
+</ol>
+
+						</section>						
+					</div>
+				</div>
+				<div class="open">
+					<p class="open-a">展开全部</p>
+					<p class="close-a" style="display:none">收起</p>
+				</div>
+					
+				<div class="text-foot">
+					<p><span id="a"></span></p>
+					<p><span id="b"></span></p>
+					<p><span id="c"></span></p>
+				</div>	
+			</div> 	<!-- text-box -->
+
+
+
+			<div class="text-box">
+				<div class="text-head">
+					<img src="../icon/head.png" alt="头像" class="img-head">
+					<h3>个人网站的需求</h3>
+					<p class="text-date">2017.6.18</p>
+					<div class="lable-box">
+						<span class="cell bg-r">JS</span>
+						<span class="cell bg-b">CSS</span>
+						<span class="cell bg-g">HTML</span>
+					</div>
+				</div>
+				<div class="text-body">
+					<div class="content">					
+						<section>
+<pre><code>
+个人网站的一些需求
+	+响应式，兼容移动端,弹性布局
+	+简洁大气
+	+电脑桌面形式--项目页面
+	背景：渐变色？大头像？纯色？随机生成？
+	画布特效
+	登录注册功能
+	博客发文，图片，存储到数据库
+	部署到云服务器
+	时间轴？
+	添加github等相关社交网站
+	五年后的简历
+	侧栏分享按钮定期抖动
+	简历提供下载
+	FBI WARNING
+	http://www.nerisson.fr/  框中字体下滑
+</code></pre>		
+	
+						</section>						
+					</div>
+				</div>
+				<div class="open">
+					<p class="open-a">展开全部</p>
+					<p class="close-a" style="display:none">收起</p>
+				</div>
+					
+				<div class="text-foot">
+					<p><span id="a"></span></p>
+					<p><span id="b"></span></p>
+					<p><span id="c"></span></p>
+				</div>	
+			</div> 	<!-- text-box -->
+
+			
+
+			<div class="text-box">
+				<div class="text-head">
+					<img src="../icon/head.png" alt="头像" class="img-head">
+					<h3>进程与线程</h3>
+					<p class="text-date">2017.6.18</p>
+					<div class="lable-box">
+						<span class="cell bg-r">计算机</span>
+						<!-- <span class="cell bg-b">CSS</span>
+						<span class="cell bg-g">HTML</span> -->
+					</div>
+				</div>
+				<div class="text-body">
+					<div class="content">					
+						<section>
+						<p>"进程"是具有一定独立功能的程序关于某个数据集合上的一次运行活动,进程是系统进行资源分配和调度的一个独
+					立单位
+					<br>"线程"是进程的一个实体,是CPU调度和分派的基本单位,它是比进程更小的能独立运行的基本单位
+					<br><br>1.一个线程可以创建和撤销另一个线程;同一个进程中的多个线程之间可以并发执行
+					<br>2.进程有独立的地址空间，一个进程崩溃后，在保护模式下不会对其它进程产生影响
+					<br>3.线程有自己的堆栈和局部变量，但线程之间没有单独的地址空间，一个线程死掉就等于整个进程死掉
+					<br>4.对于一些要求同时进行并且又要共享某些变量的并发操作，只能用线程，不能用进程
+					<br>5.多进程的程序要比多线程的程序健壮，但在进程切换时，耗费资源较大，效率要差一些</p>
+
+						</section>						
+					</div>
+				</div>
+				<div class="open">
+					<p class="open-a">展开全部</p>
+					<p class="close-a" style="display:none">收起</p>
+				</div>
+					
+				<div class="text-foot">
+					<p><span id="a"></span></p>
+					<p><span id="b"></span></p>
+					<p><span id="c"></span></p>
+				</div>	
+			</div> 	<!-- text-box -->
+
+
+
+			<div class="text-box">
+				<div class="text-head">
+					<img src="../icon/head.png" alt="头像" class="img-head">
+					<h3>模板</h3>
+					<p class="text-date">2017.6.18</p>
+					<div class="lable-box">
+						<span class="cell bg-r">JS</span>
+						<span class="cell bg-b">CSS</span>
+						<span class="cell bg-g">HTML</span>
+					</div>
+				</div>
+				<div class="text-body">
+					<div class="content">					
+						<section>
+
+						</section>						
+					</div>
+				</div>
+				<!-- <div class="open">
+					<p class="open-a">展开全部</p>
+					<p class="close-a" style="display:none">收起</p>
+				</div> -->
+					
+				<div class="text-foot">
+					<p><span id="a"></span></p>
+					<p><span id="b"></span></p>
+					<p><span id="c"></span></p>
+				</div>	
+			</div> 	<!-- text-box -->
+
+
+			
+
+		<div class="text-box">
+				<div class="text-head">
+					<img src="../icon/unb.png" alt="头像" class="img-head">
+					<h3>网页宽高获取</h3>
+					<p class="text-date">2017.6.18</p>
+					<div class="lable-box">
+						<span class="cell bg-r">JS</span>
+						<span class="cell bg-b">CSS</span>
+						<span class="cell bg-g">HTML</span>
+					</div>
+				</div>
+				<div class="text-body">
+					<div class="content">
+						<section>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;整理了关于网页宽高常见的获取方式</p>				
+<pre><code>网页可见区域宽： document.body.clientWidth
+网页可见区域高： document.body.clientHeight
+网页可见区域宽： document.body.offsetWidth (包括边线的宽)
+网页可见区域高： document.body.offsetHeight (包括边线的高)
+网页正文全文宽： document.body.scrollWidth
+网页正文全文高： document.body.scrollHeight
+网页被卷去的高： document.body.scrollTop
+网页被卷去的左： document.body.scrollLeft
+网页正文部分上： window.screenTop
+网页正文部分左： window.screenLeft
+屏幕分辨率的高： window.screen.height
+屏幕分辨率的宽： window.screen.width
+屏幕工作区高度： window.screen.availHeight
+屏幕工作区宽度： window.screen.availWidth
+							</code></pre>
+						</section>						
+					</div>
+				</div>
+				<div class="open">
+					<p class="open-a">展开全部</p>
+					<p class="close-a" style="display:none">收起</p>
+				</div>
+				<div class="text-foot">
+					<p><span id="a"></span></p>
+					<p><span id="b"></span></p>
+					<p><span id="c"></span></p>
+				</div>	
+			</div> 	<!-- text-box -->
+
+
+
+
+
+
+
+
 		</article>
 
 		
@@ -195,13 +535,36 @@
 
 <script src="../js/highlight.pack.js"></script>
 <script src="../js/prettify.js"></script>
+<script src="../js/base.js"></script>
+<script src="../js/tool.js"></script>
 <script>
-	// var pre=document.getElementsByTagName('pre');
-	// for(var i=0,len=pre.length;i<len;i++){
-	// 	pre[i].className='prettyprint';
-	// }
-	// prettyPrint();
 	hljs.initHighlightingOnLoad();
+	R('.open-a').click(function(){
+		var box=this.parentElement.parentElement.childNodes;
+		var p=this.parentElement.parentElement;
+		for(var i in box){
+			if(box[i].className=='text-body'){
+				box=box[i];
+				break;
+			}
+		}
+		R(p).find('.close-a').css('display','block');
+		this.style.display="none";
+		box.style["max-height"]='none';
+	})
+	R('.close-a').click(function(){
+		var box=this.parentElement.parentElement.childNodes;
+		var p=this.parentElement.parentElement;
+		for(var i in box){
+			if(box[i].className=='text-body'){
+				box=box[i];
+				break;
+			}
+		}
+		R(p).find('.open-a').css('display','block');
+		this.style.display="none";
+		box.style["max-height"]='150px';
+	})
 </script>	
 
 </body>

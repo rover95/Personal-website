@@ -11,3 +11,4 @@ R('.min-nav').toggle(function(){
 	R('.head-menu').css('display','none');
 	R('.min-nav').first().src='../icon/menu-h.png';
 })
+

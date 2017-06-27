@@ -56,12 +56,13 @@ nav a{
 }
 .name{
 	position: absolute;
-	top: 60vh;
+	bottom: 10vh;
 	left: 0vw;
-	width: 35vh;
+	width: 38vh;
 	/*height: 20vh;*/
 	color: #fff;
 	font-size: 6vh;
+	border-radius: 0 10px 10px 0;
 /*	border: 5px solid #eee;*/
 	text-align: center;
 	background-color: rgba(0,0,0,.7);
@@ -74,32 +75,120 @@ nav a{
 	font-size: 3vh;
 }
 .n3{
-	font-size: 6vh;
-}
-
-
-.l{
-	position: absolute;
-	left: 0;
-	width: 50vw;
-	height: 100vh;
-	background-color: #acf;
-}
-.r{
-	position: absolute;
-	right: 0;
-	width: 50vw;
-	height: 100vh;
-	background-color: #fca;
+	font-size: 7vh;
 }
 
 
 
 
+.jn{
+	position: relative;
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	background-color: #111
+}
+.p-title{
+	
+}
+.p-title p{
+	letter-spacing:3px;
+	text-align: center;
+	color: rgb(250,200,25);
+}
+.p-title p:first-child{
+	font-size: 6vw;
+	font-weight: bold;
+	letter-spacing:5px;
+	
+	border-bottom: 1px solid rgb(250,200,25);
+}
+.skill-box{
+	position: relative;
+	display: flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:center;
+	align-items:flex-start;
+	width: 35vw;
+	/*background-color: rgba(0,0,0,.5);*/
+	
+}
+.skill{
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	margin: 4px;
+	font-size: 16px;
+	border-radius: 3px;
+	padding: 0 10px;
+	color: #111;
+}
+
+.b-o1{
+	background-color: rgba(250,200,25,.1);
+}
+.b-o3{
+	background-color: rgba(250,200,25,.3); 
+}
+.b-o5{
+	background-color: rgba(250,200,25,.55); 
+}
+.b-o9{
+	background-color: rgba(250,200,25,.75); 
+}
+.b-o{
+	background-color: rgba(250,200,25,1); 
+}
+.skill:hover{
+	background-color: rgba(250,250,0,1);
+} 
+.skill-line{
+	display: flex;
+	flex-direction:row;
+	justify-content:space-between;
+	align-items:center;
+	margin:15px 0;
+	width: 35vw;
+	height: 30px;
+	border-radius: 3px;
+
+	background: -moz-linear-gradient(left, rgba(250,200,25,1) 0%, rgba(250,200,25,.1) 100%);
+	background: -webkit-linear-gradient(left, rgba(250,200,25,1) 0%,rgba(250,200,25,.1) 100%);
+}
+.skill-line p{
+	position: relative;
+	margin: 0 30px;	
+	color: #222;
+	font-size: 12px;
+}
+.jy{
+	position: relative;
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	background-color: #191919;
+}
+
+.xm{
+	position: relative;
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	background-color: #222222;
+}
 
 
 
-.p3{
+
+
+
+
+
+.xz{
 	display: flex;
 	flex-direction:column;
 	justify-content:center;
@@ -109,4 +198,20 @@ nav a{
 	margin: 0 auto;
 	text-align: center;
 	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+@media  screen  and (max-width: 768px){
+	.skill-box{
+		width: 250px;
+	}
+	.skill-line{
+		width: 250px;
+	}
 }

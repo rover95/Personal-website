@@ -117,8 +117,9 @@ footer{
 	height: 120px;
 }
 footer p{
-	font-size: 14px;
+	font-size: 12px;
 	margin: 2px 0;
+	text-align: center;
 }
 footer .icon-box{
 	margin: 10px 0;
@@ -145,5 +146,8 @@ footer .icon-box{
 	}
 	.min-nav{
 		display: block;
+	}
+	.footer p{
+		font-size: 10px;
 	}
 }

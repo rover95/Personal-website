@@ -60,7 +60,7 @@ nav a{
 	position: absolute;
 	bottom: 10vh;
 	left: 0vw;
-	width: 38vh;
+	width: 35vh;
 	/*height: 20vh;*/
 	color: #fff;
 	font-size: 6vh;
@@ -74,10 +74,10 @@ nav a{
 
 }
 .n2{
-	font-size: 3vh;
+	font-size: 2vh;
 }
 .n3{
-	font-size: 7vh;
+	font-size: 6vh;
 }
 
 
@@ -113,6 +113,33 @@ nav a{
 	width: 250px;
 	margin: 6px;
 	text-align: left;
+}
+.hide-box{
+	position: absolute;
+	width: 100px;
+	color: #111;
+	background-color: rgb(250,200,25);
+	border-radius: 2px;
+	opacity: 0;
+}
+.hide1{
+	top: 30vh;
+	right: 20vw;
+}
+.hide2{
+	top: 60vh;
+	right: 16vw;
+}
+.hide3{
+	top:40vh;
+	left: 13vw;
+}
+.hide4{
+	top: 86vh;
+	left: 16vw;
+}
+.hide-box:hover{
+	opacity: 1;
 }
 
 
@@ -229,6 +256,9 @@ nav a{
 	align-items:center;
 	background-color: #333;
 }
+.xm .p-title{
+	margin-bottom: 20px;
+}
 .xm-box{
 	display: flex;
 	flex-wrap:wrap;
@@ -238,8 +268,9 @@ nav a{
 }
 .xm-cell{
 	display: flex;
-	justify-content:space-around;
+	justify-content:center;
 	align-items:center;
+	margin: 5px
 }
 .bg-jq{
 	background: url(../img/jquery.png) no-repeat center;
@@ -264,8 +295,14 @@ nav a{
 .xm-info{
 	width: 30vw;
 	margin-left: 20px;
+	text-align: left;
 }
-
+.xm-a{
+	position: absolute;
+	bottom: 20px;
+	color: rgb(250,200,25);
+	margin-top: 40px;
+}
 
 
 
@@ -287,6 +324,11 @@ nav a{
 }
 
 
+
+
+footer{
+	background-color: #888;
+}
 
 
 
@@ -312,13 +354,28 @@ nav a{
 		align-items:center;
 	}
 	.xm-info{
-		width: 70vw;
+		width: 40vw;
 	}
 	.f35{
 		font-size: 28px;
 	}
+	.f28{
+		font-size: 24px;
+	}
 	.xm-img{
 		width: 50px;
 		height: 50px;
+	}
+	.sx .l{
+		width: 25vw;
+
+	}
+	.sx .r{
+		width: 65vw;
+	}
+}
+@media  screen  and (max-width: 400px){
+	.xm-info{
+		width: 60vw;
 	}
 }

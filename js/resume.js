@@ -11,4 +11,10 @@ R('.min-nav').toggle(function(){
 	R('.head-menu').css('display','none');
 	R('.min-nav').first().src='../icon/menu-h.png';
 })
-
+//微信二维码显示
+function wei(){
+	R('.weixin').css('display','flex')
+}
+R('.weixin').bind('mousedown',function(){
+	R('.weixin').css('display','none')
+})

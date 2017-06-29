@@ -124,6 +124,26 @@ footer p{
 footer .icon-box{
 	margin: 10px 0;
 }
+.weixin{
+	display: none;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	color: #fff;
+	z-index: 99;
+	background: rgba(0,0,0,.5);
+
+}
+.weixin img{
+	
+	width: 200px;
+	height: 200px;
+}
 
 
 

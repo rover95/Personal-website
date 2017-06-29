@@ -43,8 +43,8 @@
 		<div class="icon-box">
 			<a href="http://weibo.com/u/5366939550" class="icon-cell bg-r icon-xinlang"></a>
 			<a href="https://rover-rx.tuchong.com/" class="icon-cell bg-y icon-tuchong"></a>
-			<a href="" class="icon-cell bg-g icon-weixin"></a>
-			<a href="" class="icon-cell bg-b icon-qq"></a>
+			<a href="#" class="icon-cell bg-g icon-weixin" onclick="wei()"></a>
+			<a href="http://wpa.qq.com/msgrd?v=3&uin=1399564343&site=oicqzone.com&menu=yes" class="icon-cell bg-a icon-qq"></a>
 			<a href="https://github.com/rover95" class="icon-cell bg-h icon-github"></a>	
 		</div>
 	</div>
@@ -535,13 +535,17 @@
 		<div class="icon-box">
 			<a href="http://weibo.com/u/5366939550" class="icon-cell bg-a icon-xinlang"></a>
 			<a href="https://rover-rx.tuchong.com/" class="icon-cell bg-a icon-tuchong"></a>
-			<a href="" class="icon-cell bg-a icon-weixin"></a>
-			<a href="" class="icon-cell bg-a icon-qq"></a>
+			<a href="#" class="icon-cell bg-a icon-weixin" onclick="wei()"></a>
+			<a href="http://wpa.qq.com/msgrd?v=3&uin=1399564343&site=oicqzone.com&menu=yes" class="icon-cell bg-a icon-qq"></a>
 			<a href="https://github.com/rover95" class="icon-cell bg-a icon-github"></a>	
 		</div>
 		<p>Designed and Powered By ROVER95.   Check out this site’s code on <a href="https://github.com/rover95/Personal-website">Github</a>.</p>
 		<p>Copyright © 2017 Rover95. All rights reserved.</p>
-	</footer>	
+	</footer>
+	<div class="weixin">
+		<p>扫一扫添加微信好友</p>
+		<img src="../img/weixin.png" alt="">
+	</div>	
 
 <script src="../js/highlight.pack.js"></script>
 <script src="../js/prettify.js"></script>
@@ -580,6 +584,13 @@
 		R('.head-menu').css('display','block')
 	},function(){
 		R('.head-menu').css('display','none')
+	})
+	//微信二维码显示
+	function wei(){
+		R('.weixin').css('display','flex')
+	}
+	R('.weixin').bind('mousedown',function(){
+		R('.weixin').css('display','none')
 	})
 </script>	
 

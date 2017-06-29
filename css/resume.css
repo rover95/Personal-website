@@ -313,14 +313,49 @@ nav a{
 .xz{
 	display: flex;
 	flex-direction:column;
-	justify-content:center;
+	justify-content:space-around;
 	align-items:center;
 	background-color: #444;
+}
+.more-p{
+	height: 55px;
+	padding: 2px 15px;
+	text-decoration: none;
+	color: rgb(250,200,25);
+	line-height: 55px;
+	border-radius: 5px;
+	font-size: 55px;
+
+}
+.more-s{
+	font-size: 18px;
+}
+.more-s span{
+	background-color: rgb(250,200,25);
+	color: #444;
+	height: 16px;
+	font-size: 14px;
+	border-radius: 5px;
+	padding: 0 5px;
+	margin: 2px 0;
 }
 .download{
 	margin: 0 auto;
 	text-align: center;
 	cursor: pointer;
+}
+.download a{
+	height: 35px;
+	padding: 2px 15px;
+	text-decoration: none;
+	color: #444;
+	line-height: 35px;
+	border-radius: 5px;
+	font-size: 28px;
+	background-color: rgb(250,200,25);
+}
+.download p{
+	margin-top: 20px;
 }
 
 

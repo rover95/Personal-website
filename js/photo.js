@@ -122,3 +122,11 @@
 	}
 	img('l',imgSrc,imgName,imgDate);
 	img('r',imgSrc,imgName,imgDate);
+
+//微信二维码显示
+	function wei(){
+		R('.weixin').css('display','flex')
+	}
+	R('.weixin').bind('mousedown',function(){
+		R('.weixin').css('display','none')
+	})

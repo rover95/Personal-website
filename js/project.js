@@ -26,17 +26,20 @@ R('.exe-box').bind('dblclick',function(e){
 	var _this=this;
 	openPgm(exeId,_this);
 })//双击事件
+
+//创建程序窗口
 function openPgm(exeId,_this){	
 	var pgm=R('.pgm-box').html()
 	var pageurl=_this.attributes["pageurl"].value;
-	console.log(_this.attributes["pageurl"].nodeValue)
+	var pgmName=R(_this).find('p').html();
+	//console.log(R(_this).find('p').html())
 	//如果要生成的程序窗口不存在，则生成
 	if(!R('#pgm'+exeId).elements[0]){
 		pgm+=`<div id="pgm${exeId}" class="program">
 				<div class="pgm-head">
 					<div class="head-left">
 						<img src="../icon/exe1.png" alt="">
-						<p>应用程序${exeId}</p>
+						<p>${pgmName}</p>
 					</div>
 					<div class="head-right">
 						<p class="execlose"></p>

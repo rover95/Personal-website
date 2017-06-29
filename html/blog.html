@@ -151,13 +151,141 @@
 				</div>	
 			</div> 	<!-- text-box -->
 			
+			
+
+			<div class="text-box">
+				<div class="text-head">
+					<img src="../icon/head.png" alt="头像" class="img-head">
+					<h3>http & https区别</h3>
+					<p class="text-date">2017.6.17</p>
+					<div class="lable-box">
+						
+						<span class="cell bg-g">计算机</span>
+					</div>
+				</div>
+				<div class="text-body">
+					<div class="content">					
+						<section>
+							<p>https是加密了的http</p>
+<ol>
+	<li>https协议需要到ca申请证书，一般免费证书很少，需要交费。</li>
+	<li>http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议。</li>
+	<li>http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。</li>
+	<li>http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。”</li>
+</ol>
+<pre><code>
+firefox头文件加Cache-Control:Public可缓存https到硬盘
+
+firesheep
+查看公共网络中的cookie信息，获取未使用https协议的信息流
+blacksheep
+对抗firesheep在入侵时向用户发出警告
+
+公钥与私钥
+公钥与私钥可以可以相互解密，公钥加密需要用相应的私钥解密，私钥加密公钥解密。只能相互解密。
+原理就是两个大素数相乘容易，他们的积分解因式十分困难。
+
+301重定向
+页面永久性移走(301重定向)是一种非常重要的"自动转向"技术。网址重定向最为可行的一种办法。
+当用户或搜索引擎向网站服务器发出浏览请求时，服务器返回的HTTP数据流中头信息(header)中的状态码的一种，
+表示本网页永久性转移到另一个地址。（待展开）
+</code></pre>
+						</section>						
+					</div>
+				</div>
+				<div class="open">
+					<p class="open-a">展开全部</p>
+					<p class="close-a" style="display:none">收起</p>
+				</div>
+					
+				<div class="text-foot">
+					<p><span id="a"></span></p>
+					<p><span id="b"></span></p>
+					<p><span id="c"></span></p>
+				</div>	
+			</div> 		<!-- text-box -->
+
+
+
+			<div class="text-box">
+				<div class="text-head">
+					<img src="../icon/head.png" alt="头像" class="img-head">
+					<h3>PHP操作数据库</h3>
+					<p class="text-date">2017.6.16</p>
+					<div class="lable-box">
+						
+						<span class="cell bg-b">PHP</span>
+						
+					</div>
+				</div>
+				<div class="text-body">
+					<div class="content">					
+						<section>
+							<p>新增表单记录</p>
+<pre><code>
+$sql=$_POST['sql']; //sql通过前段传递
+echo $sql;
+// $sql = "INSERT INTO person (name, age, year, place, sex)
+// VALUES ('John', '15', '1945', 'jiangshu', 'm')";
+if ($conn->query($sql) === TRUE) {
+    echo "新记录插入成功";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+</code></pre>
+<p>预处理语句</p>
+<pre><code>
+// 预处理及绑定
+$stmt = $conn->prepare("INSERT INTO person (name, age, year, place, sex) VALUES (?,?,?,?,?)");
+$stmt->bind_param("siiss", $n, $a, $y, $p, $s);
+$n=$_POST['name'];
+$a=$_POST['age'];
+$y=$_POST['year'];
+$p=$_POST['place'];
+$s=$_POST['sex'];
+$stmt->execute();    //执行
+</code></pre>
+<p>删除操作</p>
+<pre><code>
+$sql = "DELETE FROM person WHERE name='".$n."'";
+$conn->query($sql)
+</code></pre>
+<p>查询操作</p>
+<pre><code>
+$sql = "SELECT name FROM person WHERE age='".$a."'";
+$result=$conn->query($sql);
+// 输出数据
+if ($result->num_rows > 0) {				   
+	while($row = $result->fetch_assoc()) {
+	    echo  "Name: ".$row["name"]. "</br>"; 
+	}
+} else {
+	echo "未找到结果";
+}
+</code></pre>
+
+						</section>						
+					</div>
+				</div>
+				<div class="open">
+					<p class="open-a">展开全部</p>
+					<p class="close-a" style="display:none">收起</p>
+				</div>
+					
+				<div class="text-foot">
+					<p><span id="a"></span></p>
+					<p><span id="b"></span></p>
+					<p><span id="c"></span></p>
+				</div>	
+			</div> 	<!-- text-box -->
+
 
 
 			<div class="text-box">
 				<div class="text-head">
 					<img src="../icon/head.png" alt="头像" class="img-head">
 					<h3>响应式布局的注意点</h3>
-					<p class="text-date">2017.6.18</p>
+					<p class="text-date">2017.6.13</p>
 					<div class="lable-box">
 						<!-- <span class="cell bg-r">JS</span> -->
 						<span class="cell bg-b">CSS</span>
@@ -199,7 +327,7 @@
 				<div class="text-head">
 					<img src="../icon/head.png" alt="头像" class="img-head">
 					<h3>CSS书写规范</h3>
-					<p class="text-date">2017.6.18</p>
+					<p class="text-date">2017.6.11</p>
 					<div class="lable-box">
 						<!-- <span class="cell bg-r">JS</span> -->
 						<span class="cell bg-b">CSS</span>
@@ -309,7 +437,7 @@
 				<div class="text-head">
 					<img src="../icon/head.png" alt="头像" class="img-head">
 					<h3>this的指向</h3>
-					<p class="text-date">2017.6.18</p>
+					<p class="text-date">2017.6.10</p>
 					<div class="lable-box">
 						<span class="cell bg-r">JS</span>
 						<!-- <span class="cell bg-b">CSS</span>
@@ -355,7 +483,7 @@
 				<div class="text-head">
 					<img src="../icon/head.png" alt="头像" class="img-head">
 					<h3>个人网站的需求</h3>
-					<p class="text-date">2017.6.18</p>
+					<p class="text-date">2017.6.8</p>
 					<div class="lable-box">
 						<span class="cell bg-r">JS</span>
 						<span class="cell bg-b">CSS</span>
@@ -405,7 +533,7 @@
 				<div class="text-head">
 					<img src="../icon/head.png" alt="头像" class="img-head">
 					<h3>进程与线程</h3>
-					<p class="text-date">2017.6.18</p>
+					<p class="text-date">2017.6.1</p>
 					<div class="lable-box">
 						<span class="cell bg-r">计算机</span>
 						<!-- <span class="cell bg-b">CSS</span>
@@ -441,7 +569,7 @@
 
 
 
-			<div class="text-box">
+			<!-- <div class="text-box">
 				<div class="text-head">
 					<img src="../icon/head.png" alt="头像" class="img-head">
 					<h3>模板</h3>
@@ -459,17 +587,17 @@
 						</section>						
 					</div>
 				</div>
-				<!-- <div class="open">
+				<div class="open">
 					<p class="open-a">展开全部</p>
 					<p class="close-a" style="display:none">收起</p>
-				</div> -->
+				</div>
 					
 				<div class="text-foot">
 					<p><span id="a"></span></p>
 					<p><span id="b"></span></p>
 					<p><span id="c"></span></p>
 				</div>	
-			</div> 	<!-- text-box -->
+			</div>  -->	<!-- text-box -->
 
 
 			
@@ -478,7 +606,7 @@
 				<div class="text-head">
 					<img src="../icon/unb.png" alt="头像" class="img-head">
 					<h3>网页宽高获取</h3>
-					<p class="text-date">2017.6.18</p>
+					<p class="text-date">2017.5.25</p>
 					<div class="lable-box">
 						<span class="cell bg-r">JS</span>
 						<span class="cell bg-b">CSS</span>

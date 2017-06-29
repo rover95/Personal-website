@@ -121,7 +121,7 @@
 		imgClick();	  //为自动生成的图片添加click事件
 	}
 	img('l',imgSrc,imgName,imgDate);
-	img('r',imgSrc,imgName,imgDate);
+	
 
 //微信二维码显示
 	function wei(){

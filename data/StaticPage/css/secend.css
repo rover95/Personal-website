@@ -1,0 +1,287 @@
+@import "utf-8";
+
+#bgimg{
+	width: 1263px;
+	font-family: Microsoft YaHei;
+	height: 600px;
+	margin: 0 auto;
+	color: #aaa;
+	background: linear-gradient(to top right,rgba(0,0,0,0),rgba(0,0,0,0.5)),url(../img/tour3.JPG) no-repeat center 100%;
+	background-size: 1263px 600px;
+}
+#bgimg .bgfont{
+	padding: 140px 0 0 200px;
+
+}
+#bgimg h2{
+	font-size: 45px;
+	/*font-weight: normal;
+*/}
+#bgimg h3{
+	font-size: 18px;
+	font-weight: normal;
+}
+
+#container{
+	width: 1263px;
+	/*height: 1600px;*/
+	font-family: Microsoft YaHei;
+/*	background-color: #555;*/
+	margin: 30px auto;
+}
+#container .left{
+	width: 340px;
+	/*height: 1600px;*/
+/*	background-color: #999;*/
+	float: right;
+}
+#container .right{
+	width: 900px;
+/*	height: 1600px;*/
+/*	background-color: #888;*/
+	float: left;
+}
+#container .side{
+	border: 1px solid #eee;
+	text-align: center;
+	margin: 0 0 10px 0;
+	width: 340px;
+}
+#container .side h2{
+	font-size: 25px;
+	text-align: left;
+	color: #444;
+	font-weight: normal;
+	line-height: 30px;
+	margin: 5px 0 10px 5px;
+
+}
+#container .side a{
+	display: inline-block;
+	width: 100px;
+	height: 35px;
+	line-height: 35px;
+	background-color: #eee;
+	color: #777;
+	margin: 2px 0px ;
+}
+#container .side a:hover{
+	background-color: #259;
+}
+#container .side img{
+	width: 150px;
+	height: 100px;
+}
+#container figure{
+	display: inline-block;
+	border: 1px solid #666;
+	color: #666;
+	padding: 4px;
+	margin: 2px 0;
+}
+
+#container .side figcaption{
+	font-size: 14px;
+}
+#container .side.bottom a{
+	display: inline-block;
+	width: 150px;
+	height: 45px;
+	line-height: 45px;
+	/*background-color: #eee;*/
+	color: #777;
+	position: relative;
+	margin: 2px 0px ;
+}
+#container .side.bottom a:hover{
+	background-color: #259;
+}
+#container .figure{
+	padding: 10px 0;
+}
+#container .side.bottom img{
+	width: 30px;
+	height: 30px;
+	/*padding: 7px 0 0 7px;*/
+	position: absolute;
+	top: 7px;
+	left: 7px;
+	/*background-color: red;*/
+
+}
+#container a.abox{
+	background: #eee url(../img/电离辐射.png) no-repeat 10px center ;
+	background-size: 30px 30px;
+	/*background-color: red;*/
+}
+
+
+#container .rtop{
+	height: 45px;
+	background-color: #aaa;
+	/*text-align: center;*/
+}
+#container .rtop a{
+	color: #259;
+}
+#container .rtop .left{
+	float: left;
+	width: 310px;
+	height: 45px;
+	line-height: 45px;
+/*	background-color: red;	*/
+}
+#container .rtop .left li{
+	display: inline-block;
+	width: 150px;
+	text-align: center;
+}
+#container .rtop .left li:first-child{
+	background-color: #eee;
+	border-top: 2px solid #259;
+	position: relative;
+	left: 1px;
+}
+#container .rtop .right{
+	float: right;
+	width: 200px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;	
+
+	/*background-color: blue;*/
+}
+
+#container .rtop .right li{
+	display: inline-block;
+	width: 50px;
+}
+#container .rtop .right li a{
+	padding: 4px 6px;
+}
+#container .rtop .right li a:hover{
+	background-color: #259;
+	color: #fff;	
+}
+#container .rtop .right .active{
+	background-color: #259;
+	color: #fff;
+}
+
+
+#container .tour{
+	width: 800px;
+	margin: 20px auto;
+	border: 1px solid #999;
+	padding: 4px;
+}
+#container .tour figure{
+	display: block;
+	position: relative;
+	border: 1px solid #999;
+	padding: 0 0;
+	margin: 0 0 4px 0;
+	/*background-color: blue;*/
+}
+#container .tour img{
+	width: 300px;
+	height: 200px;
+	margin: 0 0 0 0;
+	vertical-align: middle;
+
+}
+#container .tour figcaption{
+	display: inline-block;
+	position: absolute;
+	width: 470px;
+	top: 0;
+	margin: 0 0 0 20px;
+	/*background-color: red;*/
+}
+#container .xl{
+	margin: 10px 0 0 5px;
+}
+#container .xl h2{
+	font-size: 25px;
+	color: #555;
+	font-weight: normal;
+	margin: 0 0 5px 0;
+}
+#container .xl span{
+	display: inline;
+	height: 14px;
+	line-height: 14px;
+	font-weight: bolder;
+	margin: 0 5px 0 0;
+	/*background-color: red;*/
+	border: 1px solid #259;
+	border-radius: 2px;
+	color: #259;
+}
+#container .xl p{
+	line-height: 2;
+}
+#container .inline{
+	display: inline;
+	line-height: 1.5;
+}
+#container .download{
+	position: absolute;
+	top: 20%;
+	right: 10px;
+	font-size: 8px;
+}
+#container .download p{
+	display: inline;
+}
+#container .download em{
+	display: inline;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 30px;
+	color: #f40;
+}
+#container .download .del{
+	font-size: 8px;
+	color: #999;
+	text-decoration: line-through;
+
+}
+
+#container .price{
+	position: absolute;
+	top: 55%;
+	right: 15px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 25px;
+	color: #fff;
+	background-color: #f40;
+	padding: 10px 30px;
+	border-radius: 5px;
+
+}
+#container .turn{
+	position: absolute;
+	top: 8px;
+	right: -5px;
+	color: #f40;
+	font-size: 10px;
+	transform: rotate(45deg);
+}
+#container .more{
+	height: 55px;
+	width: 150px;
+	font-size: 25px;
+	margin: 40px auto;
+	color: #ddd;
+	text-align: center;
+	border: 1px solid #ddd;
+	background-color: #999;
+	line-height: 55px;
+	border-radius: 10px;
+}
+#container .more a{
+	color: #fff;
+	display: block;
+}

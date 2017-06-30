@@ -16,6 +16,9 @@ var desk=document.documentElement;
 
 R('#exe1').drag(R('#exe1 .exe-cover').last());      //图标拖拽
 R('#exe2').drag(R('#exe2 .exe-cover').last());
+R('#exe3').drag(R('#exe3 .exe-cover').last());
+R('#exe4').drag(R('#exe4 .exe-cover').last());
+R('#exe5').drag(R('#exe5 .exe-cover').last());
 //R('.program').drag(R('.pgm-head').last(),R('.program').last());		 //程序框拖拽
 
 var whlt=[];    //存储将要缩小的窗口的大小，位置
@@ -24,7 +27,14 @@ var z=10;
 R('.exe-box').bind('dblclick',function(e){
 	var exeId=R(this).first().id;
 	var _this=this;
-	openPgm(exeId,_this);
+	//console.log(_this.attributes["target"].value)
+	//是否在当前页面打开
+	if(_this.attributes["target"].value=='_blank'){
+		window.open(_this.attributes["pageurl"].value)
+	}else{
+		openPgm(exeId,_this);
+	}
+	
 })//双击事件
 
 //创建程序窗口
@@ -110,7 +120,7 @@ function openPgm(exeId,_this){
 		//点击叉最小化窗口	
 		R('.exemin').click(function(){
 				var parent=R(this).elements[0].parentElement.parentElement.parentElement;
-				min(parent)	
+				min(parent);
 		})
 
 		
@@ -244,7 +254,7 @@ function min(parent){		//parent为要缩小的窗口节点
 	}
 	R(parent).animate({
 		alter:150,
-		time:5,
+		time:1,
 		mul:{
 			w:25,
 			h:10,
@@ -261,8 +271,8 @@ function min(parent){		//parent为要缩小的窗口节点
 function max(parent,num){
 	R(parent).css('display','block')
 		R(parent).animate({
-			alter:200,
-			time:5,
+			alter:300,
+			time:1,
 			mul:{
 				w:whlt[num].w,
 				h:whlt[num].h-20,//不知道哪里多出20px来

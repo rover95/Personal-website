@@ -1,0 +1,77 @@
+@import "utf-8";
+
+#tour{
+	width: 1263px;
+	/*height: 1000px;*/
+/*	background-color: #aaa;*/
+	margin: 50px auto;
+	text-align: center;
+}
+#tour .center h2{
+	font-size: 40px;
+	font-family:Microsoft YaHei;
+	letter-spacing: 1px;
+	color: #777;
+/*	background-color: blue;*/
+	margin: 10px 0;
+
+}
+#tour .center p{
+	color: #777;
+	font-family:Microsoft YaHei;
+	margin: 10px 0;
+}
+#tour figure img{
+	width: 350px;
+	height: 200px;
+	vertical-align: middle;
+}
+#tour figure{
+	border: 1px solid #888;
+	display: inline-block;
+	font-family: Microsoft YaHei;
+	text-align: left;
+	width: 350px;
+	padding: 4px;
+	border-radius: 4px;
+	margin: 15px 15px; 
+	position: relative;
+
+}
+#tour figcaption{
+	color: #777;
+	font-size: 15px;
+	letter-spacing: 1px;
+	line-height: 1.5;
+}
+#tour .title{
+	color: #333;
+
+}
+#tour em{
+	color: #999;
+	float: right;
+	position: relative;
+	bottom: 1px;
+	right: 7px;
+}
+#tour span{
+	color: #f60;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+#tour .type{
+	width: 90px;
+	height: 25px;
+	font-size: 15px;
+	line-height: 25px;
+	background-color: #59b200;
+	color: #fff;
+	text-align: center;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+
+}
+

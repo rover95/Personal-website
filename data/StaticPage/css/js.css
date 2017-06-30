@@ -1,0 +1,42 @@
+@import "utf-8";
+
+/*.aaa{
+	color: #111;
+
+	border: 50px solid #15d;
+	width: 400px;
+	height: 200px;
+	margin: 10px;
+	padding: 20px;
+	background-color: #fff;
+	overflow: scroll;
+
+}*/
+/*.bbb{
+	font-size: 50px;
+}
+.ccc{
+	background-color: #999;
+}*/
+
+.aa{
+	background-color: #d11;
+	width: 200px;
+	height: 200px;
+}
+.bb{
+	background-color: #11d;
+	width: 200px;
+	height: 200px;
+}
+#sp{
+	width: 80px;
+	border: 1px solid red;
+	background-color: #ccc;
+	display: none;
+	position:absolute;
+	
+}
+body{
+	background-color: #999;
+}

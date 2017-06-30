@@ -9,7 +9,8 @@
 //轮播器
 	var crs_num=1;  //图片位置
 	var d=1;   	//运动方向
-	var w=R('#carousel img').css().first().width
+	var w=getStyle(R('#carousel img').first(),'width')
+	//console.log(getStyle(R('#carousel img').first(),'width'))
 	function interval(){
 		carousel=setInterval(function(){
 			
@@ -28,7 +29,7 @@
 			if(crs_num==3||crs_num==0){
 				d=-d;
 			}
-		},4000)
+		},2000)
 	}
 	interval();
 	
@@ -103,7 +104,7 @@
 	var imgName='gun';
 	var imgDate='2017-05-16';
 	function img(node,src,name,date){
-		node= node=='c'?'#column-left':node=='r'?'#column-right':node=='l'?'#column-left':'#column-left';
+		node= node=='c'?'#column-center':node=='r'?'#column-right':node=='l'?'#column-left':'#column-left';
 		var html= `<div class="photo-cell">
 				<figure>
 					<div class="img-cover"></div>
@@ -121,7 +122,11 @@
 		imgClick();	  //为自动生成的图片添加click事件
 	}
 	img('l',imgSrc,imgName,imgDate);
-	
+	img('r','../img/1791.jpg',imgName,imgDate);
+	img('c','../img/7463.jpg',imgName,imgDate);
+	img('l','../img/2180.jpg',imgName,imgDate);
+	img('r','../img/4768.jpg',imgName,imgDate);
+
 
 //微信二维码显示
 	function wei(){

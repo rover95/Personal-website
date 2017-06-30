@@ -28,7 +28,7 @@ body{
 	width: 75px;
 	height: 45px;
 	border-radius: 3px;
-	z-index: 9;
+	z-index: 8;
 	background-color: rgba(255,255,255,0);
 }
 .exe-cover:hover{
@@ -283,6 +283,65 @@ body{
 iframe{
 	width: 100%;
 	height: 100%;
+}
+
+.begin-menu{
+	position: absolute;
+	bottom: 30px;
+	display: none;
+	justify-content:space-between;
+	width: 400px;
+	height: 80vh;
+	border-radius: 0 10px 0 0;
+	background-color: rgb(113,176,215);
+	z-index: 9;
+}
+.begin-menu img{
+	position: absolute;
+	right: 60px;
+	top: -20px;
+	border-radius: 5px;
+	border: 3px solid #19f;
+	width: 50px;
+	height: 50px;
+}
+.l-begin{
+	width: 240px;
+	margin: 8px;
+	border-radius: 5px;
+	background-color: #fff;
+	padding-top: 5px;
+	list-style: none;
+}
+.l-begin li{
+	margin: 0px 5px;
+	padding-left: 35px;
+	font-size: 14px;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 5px;
+	background: url(../icon/folder.png) no-repeat left;
+	background-size: 30px 30px;
+}
+.l-begin li:hover{
+	background-color: #eee;
+}
+.r-begin{
+	margin: 0 10px;
+	padding-top: 60px;
+	width: 150px;
+	list-style: none;
+	color: #fff;
+}
+.r-begin li{
+	padding-left: 10px;
+	height: 35px;
+	font-size: 14px;
+	line-height: 35px;
+	border-radius: 5px;
+}
+.r-begin li:hover{
+	background-color: #ddd;
 }
 
 

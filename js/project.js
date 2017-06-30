@@ -29,7 +29,7 @@ R('.exe-box').bind('dblclick',function(e){
 	var _this=this;
 	//console.log(_this.attributes["target"].value)
 	//是否在当前页面打开
-	if(_this.attributes["target"].value=='_blank'){
+	if(_this.attributes["target"]&&_this.attributes["target"].value=='_blank'){
 		window.open(_this.attributes["pageurl"].value)
 	}else{
 		openPgm(exeId,_this);
@@ -203,6 +203,20 @@ R('#fullP').click(function(){
 		desk.webkitRequestFullScreen(); 
 	}else if(elem.msRequestFullscreen){			//IE11
 		elem.msRequestFullscreen();
+	}
+})
+//开始菜单
+R('begin-box img').click(function(){
+	if(R('.begin-menu').css('display')=='none'){
+		R('.begin-menu').css('display','flex');
+	}else{
+		R('.begin-menu').css('display','none');
+	}
+		
+})
+R(document).click(function(e){
+	if(e.target==R('.pgm-box').first()){
+		R('.begin-menu').css('display','none');
 	}
 })
 

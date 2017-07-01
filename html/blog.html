@@ -79,8 +79,8 @@
 					<p class="text-date">2017.6.18</p>
 					<div class="lable-box">
 						<span class="cell bg-r">JS</span>
-						<span class="cell bg-b">CSS</span>
-						<span class="cell bg-g">HTML</span>
+						<!-- <span class="cell bg-b">CSS</span>
+						<span class="cell bg-g">HTML</span> -->
 					</div>
 				</div>
 				<div class="text-body">
@@ -281,7 +281,7 @@ if ($result->num_rows > 0) {
 
 
 
-			<div class="text-box">
+			<div class="text-box" name="top">
 				<div class="text-head">
 					<img src="../icon/head.png" alt="头像" class="img-head">
 					<h3>响应式布局的注意点</h3>
@@ -528,6 +528,61 @@ if ($result->num_rows > 0) {
 			</div> 	<!-- text-box -->
 
 			
+			<div class="text-box">
+				<div class="text-head">
+					<img src="../icon/head.png" alt="头像" class="img-head">
+					<h3>动态加载js</h3>
+					<p class="text-date">2017.6.2</p>
+					<div class="lable-box">
+						<span class="cell bg-r">JS</span>
+						<!-- <span class="cell bg-b">CSS</span>
+						<span class="cell bg-g">HTML</span> -->
+					</div>
+				</div>
+				<div class="text-body">
+					<div class="content">					
+						<section>
+							<ol>
+								<li><h4>动态创建节点</h4>
+<pre>
+<code>var scir=document.createElement('script')
+var head=document.getElementsByTagName('head')[0]
+scir.src="js/new.js";
+head.appendChild(scir)</code>
+</pre>
+								</li>
+								<li><h4>jq</h4>
+<pre>
+<code>$.getScript('js/new.js',function(){ 
+     new();
+ }); </code>
+</pre>
+								</li>
+								<li><h4>更改现有&lt;script>的src</h4>
+
+								</li>
+								<li><h4>创建新<code>&lt;script></code>节点</h4>
+<pre>
+<code>document.write("&lt;script src='test.js'>&lt;\/script>")</code>
+</pre>
+								</li>
+							</ol>
+
+						</section>						
+					</div>
+				</div>
+				<div class="open">
+					<p class="open-a">展开全部</p>
+					<p class="close-a" style="display:none">收起</p>
+				</div>
+					
+				<div class="text-foot">
+					<p><span id="a"></span></p>
+					<p><span id="b"></span></p>
+					<p><span id="c"></span></p>
+				</div>	
+			</div> 	<!-- text-box -->
+
 
 			<div class="text-box">
 				<div class="text-head">
@@ -601,6 +656,51 @@ if ($result->num_rows > 0) {
 
 
 			
+			<div class="text-box">
+				<div class="text-head">
+					<img src="../icon/head.png" alt="头像" class="img-head">
+					<h3>github使用</h3>
+					<p class="text-date">2017.6.18</p>
+					<div class="lable-box">
+						<span class="cell bg-r">JS</span>
+						<span class="cell bg-b">CSS</span>
+						<span class="cell bg-g">HTML</span>
+					</div>
+				</div>
+				<div class="text-body">
+					<div class="content">					
+						<section>
+							<p>在网上看来很多教程，各不相同，按自己的理解写一份</p>
+							<ol>
+								<li>首先需要注册github账号，下载myysgit（地址）</li>
+								<li>github上建立仓库</li>
+								<li>有的教程说要建立本地ssh key私钥和公钥，可跳过</li>
+								<li>找一个你要放代码的文件夹右键 <code>git bash here</code> 打开msysgit</li>
+								<li>将你在github上新建的仓库下载到本地，<code>git clone 'https://github.com/rover95/Personal-website.git'</code> </li>
+								<li>在刚才的文件夹中会多一个你仓库名的Personal-website文件夹，把你要上传的文件全复制进去</li>
+								<li>msysgit输入 <code>cd Personal-website</code> 进入这个文件夹 <code>git add . </code>把所有文件添加进来</li>
+								<li><code>git commit -m "你的提交说明" </code> （提交到本地仓库）</li>
+								<li><code>git push -u origin master</code>  (将本地仓库push到github上)</li>
+								<li>随后提示你输入github的用户名和密码——提交完成</li>
+								<li>更改 在本文件夹下打开msysgit 执行<code>git add .</code> | <code>git commit</code> | <code>git push -u oriign master</code>	</li>
+							</ol>
+
+						</section>						
+					</div>
+				</div>
+				<div class="open">
+					<p class="open-a">展开全部</p>
+					<p class="close-a" style="display:none">收起</p>
+				</div>
+					
+				<div class="text-foot">
+					<p><span id="a"></span></p>
+					<p><span id="b"></span></p>
+					<p><span id="c"></span></p>
+				</div>	
+			</div> 	<!-- text-box -->
+
+
 
 		<div class="text-box">
 				<div class="text-head">
@@ -609,8 +709,8 @@ if ($result->num_rows > 0) {
 					<p class="text-date">2017.5.25</p>
 					<div class="lable-box">
 						<span class="cell bg-r">JS</span>
-						<span class="cell bg-b">CSS</span>
-						<span class="cell bg-g">HTML</span>
+						<!-- <span class="cell bg-b">CSS</span>
+						<span class="cell bg-g">HTML</span> -->
 					</div>
 				</div>
 				<div class="text-body">
@@ -649,8 +749,8 @@ if ($result->num_rows > 0) {
 
 
 
-
-
+				
+			<div class="to-top"><a href="#">TOP</a></div>
 
 
 		</article>

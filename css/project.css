@@ -69,6 +69,7 @@ body{
 	background: -webkit-linear-gradient(top, rgb(155,185,210),rgb(185,210,235));
 	box-shadow: 1px 1px 20px rgba(0,0,0,.3);
 	overflow: hidden;
+	z-index: 9;
 }
 .pgm-head{
 	width: 100%;
@@ -177,6 +178,7 @@ body{
 	border-top: 1px solid #555;
 	box-shadow: inset 0 1px 1px #eee;
 	background-color: #999;
+	z-index: 19;
 }
 .task-bg{
 	position: absolute;
@@ -199,6 +201,7 @@ body{
 	left: 9px;
 	width: 42px;
 	height: 42px;
+	z-index: 19;
 }
 .begin-box img:hover{
 	-webkit-filter: drop-shadow(#fff 0px 0px 10px);

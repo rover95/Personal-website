@@ -100,9 +100,6 @@
 	// 			</figure>
 	// 		</div>`
 
-	var imgSrc='../img/_DSC6707.JPG';
-	var imgName='gun';
-	var imgDate='2017-05-16';
 	function img(node,src,name,date){
 		node= node=='c'?'#column-center':node=='r'?'#column-right':node=='l'?'#column-left':'#column-left';
 		var html= `<div class="photo-cell">
@@ -121,11 +118,20 @@
 		imgHover();   //为自动生成的图片添加hover事件
 		imgClick();	  //为自动生成的图片添加click事件
 	}
-	img('l',imgSrc,imgName,imgDate);
-	img('r','../img/1791.jpg',imgName,imgDate);
-	img('c','../img/7463.jpg',imgName,imgDate);
-	img('l','../img/2180.jpg',imgName,imgDate);
-	img('r','../img/4768.jpg',imgName,imgDate);
+	//img('l',imgSrc,imgName,imgDate);
+	img('l','../img/rw001.jpg','the four','2017.6');
+	img('c','../img/rw002.jpg','the four','2017.6');
+	img('r','../img/xy001.jpg','夕阳','2016.9');
+	img('l','../img/xy002.jpg','夕阳','2016.9');
+	img('c','../img/xy003.jpg','夕阳','2017.4');
+	img('r','../img/xy004.jpg','夕阳','2017.3');
+	img('l','../img/xy005.jpg','夕阳','2016.12');
+	img('c','../img/xy006.jpg','夕阳','2016.6');
+	img('r','../img/jw001.jpg','静物','2016.12');
+	img('l','../img/fg001.jpg','黄山银河','2016.8');
+	img('c','../img/fg002.jpg','焦山','2017.5');
+	img('r','../img/fg003.jpg','焦山','2017.5');
+
 
 
 //微信二维码显示

@@ -2,17 +2,18 @@ var desk=document.documentElement;
 
 
 //全屏显示
-// R(document).click(function(){
-// 	if (desk.requestFullscreen) {   			//W3C
-// 		desk.requestFullscreen(); 
-// 	}else if(desk.mozRequestFullScreen){		//firefox
-// 		desk.mozRequestFullScreen(); 
-// 	}else if(desk.webkitRequestFullScreen){		//chrome
-// 		desk.webkitRequestFullScreen(); 
-// 	}else if(elem.msRequestFullscreen){			//IE11
-// 		elem.msRequestFullscreen();
-// 	}
-// })
+function fullscreen(){
+	if (desk.requestFullscreen) {   			//W3C
+		desk.requestFullscreen(); 
+	}else if(desk.mozRequestFullScreen){		//firefox
+		desk.mozRequestFullScreen(); 
+	}else if(desk.webkitRequestFullScreen){		//chrome
+		desk.webkitRequestFullScreen(); 
+	}else if(elem.msRequestFullscreen){			//IE11
+		elem.msRequestFullscreen();
+	}
+}
+
 
 R('#exe1').drag(R('#exe1 .exe-cover').last());      //图标拖拽
 R('#exe2').drag(R('#exe2 .exe-cover').last());
@@ -27,15 +28,17 @@ var z=10;
 R('.exe-box').bind('dblclick',function(e){
 	var exeId=R(this).first().id;
 	var _this=this;
-	//console.log(_this.attributes["target"].value)
+	// console.log(_this.attributes["target"]);
 	//是否在当前页面打开
 	if(_this.attributes["target"]&&_this.attributes["target"].value=='_blank'){
-		window.open(_this.attributes["pageurl"].value)
+		window.open(_this.attributes["pageurl"].value);
+
 	}else{
+
 		openPgm(exeId,_this);
 	}
 	
-})//双击事件
+})
 
 //创建程序窗口
 function openPgm(exeId,_this){	
@@ -125,7 +128,7 @@ function openPgm(exeId,_this){
 
 		
 
-		}else{
+		}else{	
 			R('#pgm'+exeId).css('z-index',z++);
 			R('#pgm'+exeId).css('display','block');
 			R('#task'+exeId).css('display','block');
@@ -186,13 +189,9 @@ R('.exe-box').bind('mousedown',function(e){
 	}
 })
 //右键刷新
-R('.f5').click(function(){
-	location.reload(true);   
-})
-//右键属性
-R('.Rattr').click(function(e){
-	alert("Design By Rover95")
-})
+// R('.f5').click(function(){
+// 	window.location.reload();  
+// })
 //右键全屏
 R('#fullP').click(function(){
 	if (desk.requestFullscreen) {   			//W3C

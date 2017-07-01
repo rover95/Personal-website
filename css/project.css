@@ -257,6 +257,7 @@ body{
 	background-color: #eee;
 	border: 1px solid #bbb;
 	border-radius: 2px;
+	z-index: 999;
 	
 }
 .Rmenu ul{
@@ -297,7 +298,7 @@ iframe{
 	height: 80vh;
 	border-radius: 0 10px 0 0;
 	background-color: rgb(113,176,215);
-	z-index: 9;
+	z-index: 999;
 }
 .begin-menu img{
 	position: absolute;

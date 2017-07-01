@@ -20,6 +20,7 @@ R('#exe2').drag(R('#exe2 .exe-cover').last());
 R('#exe3').drag(R('#exe3 .exe-cover').last());
 R('#exe4').drag(R('#exe4 .exe-cover').last());
 R('#exe5').drag(R('#exe5 .exe-cover').last());
+R('#exe9').drag(R('#exe5 .exe-cover').last());
 //R('.program').drag(R('.pgm-head').last(),R('.program').last());		 //程序框拖拽
 
 var whlt=[];    //存储将要缩小的窗口的大小，位置
@@ -77,7 +78,13 @@ function openPgm(exeId,_this){
 		//不同程序不同位置
 		var num=exeId.match(/\d/)
 		num=parseInt(num[0])
-		R('#pgm'+exeId).css('left',100+num*20+'px').css('top',50+num*20+'px')
+		var sw=100;
+		var sh=50;
+		if(document.body.clientWidth<480){
+			sw=10;
+			sh=10;
+		}
+		R('#pgm'+exeId).css('left',sw+num*20+'px').css('top',sh+num*20+'px')
 		//绑定拖拽事件
 		var n=R('.program').elements;
 		for(var i=0,len=n.length;i<len;i++){
@@ -232,6 +239,13 @@ setInterval(function(){
 	R('.task-date p').html(timeStr);
 },10000)
 
+//read me
+R('#exe9').click(function(){
+	R(this).find('img').removeclass('shake-constant');
+})
+R('#exe9').bind('dblclick',function(){
+	R(this).css('top','20px');
+})
 //ajax刷新页面
 // ajax({
 // 	type:'get',

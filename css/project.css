@@ -60,7 +60,7 @@ body{
 .program{
 	display: block;
 	position: absolute;
-	left: 120px;
+	left: 100px;
 	top: 50px;
 	width: 75vw;
 	padding: 10px;
@@ -360,4 +360,17 @@ iframe{
 }
 .hover{
 	background-color: rgba(250,250,250,.5);
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 480px){
+	.programe{
+		left: 10px;
+	}
 }

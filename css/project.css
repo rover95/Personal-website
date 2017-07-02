@@ -8,7 +8,7 @@ body{
 .desktop{
 	width: 100vw;
 	height: 100vh;
-	background-color: #ccc;
+	background: url(../img/bg-windows.jpg) no-repeat center;
 	overflow: hidden;
 }
 .exe-box{
@@ -21,6 +21,7 @@ body{
 	-moz-user-select:none;
 	-ms-user-select:none;
 	user-select:none;
+	
 }
 
 .exe-cover{
@@ -47,6 +48,8 @@ body{
 	font-size: 12px;
 	line-height: 14px;
 	text-align: center;
+	color: #fff;
+	text-shadow: 0 1px 2px #222;
 }
 
 .pgm-box{
@@ -55,7 +58,6 @@ body{
 	top: 0;
 	width: 100vw;
 	height: 100vh;
-	z-index: 0;
 }
 .program{
 	display: block;
@@ -178,7 +180,7 @@ body{
 	border-top: 1px solid #555;
 	box-shadow: inset 0 1px 1px #eee;
 	background-color: #999;
-	z-index: 19;
+	z-index: 999;
 }
 .task-bg{
 	position: absolute;
@@ -201,7 +203,7 @@ body{
 	left: 9px;
 	width: 42px;
 	height: 42px;
-	z-index: 19;
+	z-index: 999;
 }
 .begin-box img:hover{
 	-webkit-filter: drop-shadow(#fff 0px 0px 10px);
@@ -298,7 +300,7 @@ iframe{
 	height: 80vh;
 	border-radius: 0 10px 0 0;
 	background-color: rgb(113,176,215);
-	z-index: 999;
+	z-index: 998;
 }
 .begin-menu img{
 	position: absolute;

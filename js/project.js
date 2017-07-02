@@ -1,7 +1,16 @@
-var desk=document.documentElement;
+//浏览器检测
+Testing();
+//chrome  text-shadow  渲染有问题
+if(sys.chrome){
+	R('.exe-box p').css('text-shadow','none')
+}
+
+
+
 
 
 //全屏显示
+var desk=document.documentElement;
 function fullscreen(){
 	if (desk.requestFullscreen) {   			//W3C
 		desk.requestFullscreen(); 

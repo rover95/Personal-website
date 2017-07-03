@@ -29,7 +29,8 @@ R('#exe2').drag(R('#exe2 .exe-cover').last());
 R('#exe3').drag(R('#exe3 .exe-cover').last());
 R('#exe4').drag(R('#exe4 .exe-cover').last());
 R('#exe5').drag(R('#exe5 .exe-cover').last());
-R('#exe9').drag(R('#exe5 .exe-cover').last());
+R('#exe6').drag(R('#exe6 .exe-cover').last());
+R('#exe9').drag(R('#exe9 .exe-cover').last());
 //R('.program').drag(R('.pgm-head').last(),R('.program').last());		 //程序框拖拽
 
 var whlt=[];    //存储将要缩小的窗口的大小，位置

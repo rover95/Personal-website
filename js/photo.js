@@ -100,8 +100,13 @@
 	// 			</figure>
 	// 		</div>`
 
+	//存储图片的代码的全局变量
+	var imghtml={
+		l:'',
+		c:'',
+		r:''
+	}
 	function img(node,src,name,date){
-		node= node=='c'?'#column-center':node=='r'?'#column-right':node=='l'?'#column-left':'#column-left';
 		var html= `<div class="photo-cell">
 				<figure>
 					<div class="img-cover"></div>
@@ -113,17 +118,14 @@
 				</figure>
 			</div>`
 
-		html=html+R(node).html();
-		R(node).html(html);
-		imgHover();   //为自动生成的图片添加hover事件
-		imgClick();	  //为自动生成的图片添加click事件
+		imghtml[node]+=html;
 	}
-	//img('l',imgSrc,imgName,imgDate);
-	img('l','../img/rw001.jpg','the four','2017.6');
-	img('c','../img/rw002.jpg','the four','2017.6');
+
+	img('l','../img/xy003.jpg','夕阳','2017.4');
+	img('c','../img/rw001.jpg','THE FOUR','2017.6');
+	img('c','../img/rw002.jpg','THE FOUR','2017.6');
 	img('r','../img/xy001.jpg','夕阳','2016.9');
 	img('l','../img/xy002.jpg','夕阳','2016.9');
-	img('c','../img/xy003.jpg','夕阳','2017.4');
 	img('r','../img/xy004.jpg','夕阳','2017.3');
 	img('l','../img/xy005.jpg','夕阳','2016.12');
 	img('c','../img/xy006.jpg','夕阳','2016.6');
@@ -131,7 +133,73 @@
 	img('l','../img/fg001.jpg','黄山银河','2016.8');
 	img('c','../img/fg002.jpg','焦山','2017.5');
 	img('r','../img/fg003.jpg','焦山','2017.5');
+	img('l','../img/fg004.jpg','金山','2016.12');
+	img('c','../img/fg005.jpg','科大秋','2016.10');
+	img('r','../img/fg006.jpg','科大四季','2015-2016');
+	img('l','../img/fg007.jpg','四川宝兴','2016.2');
+	img('c','../img/fg008.jpg','焦山','2017.3');
+	img('r','../img/fg009.jpg','苏州常熟','2016.7');
+	img('l','../img/xy007.jpg','金山湖','2016.6');
+	img('c','../img/xy008.jpg','金山湖','2016.6');
+	img('r','../img/xy009.jpg','金山湖','2016.6');
+	img('l','../img/xy010.jpg','金山湖','2016.6');
+	img('c','../img/xy011.jpg','金山湖','2016.6');
+	img('r','../img/jw002.jpg','光绘','2016.2');
+	img('r','../img/jw003.jpg','光绘','2016.2');
+	img('l','../img/fg010.jpg','黄山鲫鱼背','2016.8');
+	img('c','../img/fg011.jpg','黄山迎客松','2016.8');
+	img('r','../img/fg012.jpg','黄山','2016.8');
+	img('l','../img/fg013.jpg','芦山思延乡','2016.2');
+	img('c','../img/fg014.jpg','芦山思延乡','2016.2');
+	img('r','../img/fg015.jpg','科大春','2016.4');
+	img('l','../img/rw003.jpg','RX','2016.1');
+	img('l','../img/rw004.jpg','THE FOUR','2017.6');
+	img('c','../img/rw005.jpg','THE FOUR','2017.6');
+	img('l','../img/rw006.jpg','THE FOUR','2017.6');
+	img('l','../img/rw007.jpg','THE FOUR','2017.6');
+	img('c','../img/rw008.jpg','THE FOUR','2017.6');
+	img('c','../img/rw009.jpg','THE FOUR','2017.6');
+	img('r','../img/jw004.jpg','桌面','2017.2');
+	img('r','../img/jw005.jpg','夜景','2016.9');
+	img('r','../img/jw006.jpg','dog','2017.2');
+	img('l','../img/xy012.jpg','苏州常熟','2016.7');
+	img('c','../img/xy013.jpg','苏州常熟','2016.7');
+	img('r','../img/xy014.jpg','金山湖','2016.7');
+	img('l','../img/xy015.jpg','金山公园','2015.12');
+	img('c','../img/xy016.jpg','苏州常熟','2016.7');
+	img('r','../img/xy017.jpg','金山公园','2016.4');
+	img('r','../img/xy018.jpg','金山公园','2016.4');
+	img('c','../img/xy019.jpg','苏州常熟','2016.7');
+	img('c','../img/xy020.jpg','芦山','2016.7');
+	img('c','../img/xy021.jpg','金山公园','2016.4');
+	img('c','../img/xy022.jpg','金山公园','2016.4');
+	img('l','../img/xy023.jpg','长江日落','2015.12');
+	img('l','../img/xy024.jpg','江科大','2015.12');
+	img('l','../img/xy025.jpg','金山公园','2015.12');
+	img('l','../img/xy026.jpg','金山湖','2015.12');
+	img('c','../img/rw010.jpg','牌桌','2016.3');
+	img('c','../img/rw011.jpg','RX','2016.5');
+	img('c','../img/rw012.jpg','RX','2016.5');
+	img('l','../img/rw013.jpg','RX','2016.6');
+	img('l','../img/rw014.jpg','RX','2017.6');
+	img('l','../img/rw015.jpg','夜景','2016.5');
+	img('l','../img/rw016.jpg','西津渡','2016.5');
+	img('r','../img/fg016.jpg','黄山光明顶','2016.8');
+	img('r','../img/fg017.jpg','上海外白渡桥','2016.9');
+	img('r','../img/fg018.jpg','金山','2016.10');
+	img('r','../img/fg019.jpg','黄山银河','2016.8');
+	img('r','../img/fg020.jpg','苏州常熟','2016.7');
+	img('r','../img/fg021.jpg','苏州常熟','2016.7');
+	img('c','../img/fg022.jpg','镇江','2016.5');
+	img('c','../img/fg023.jpg','镇江润州区','2016.5');
+	
 
+
+	R('#column-left').html(imghtml.l);
+	R('#column-center').html(imghtml.c);
+	R('#column-right').html(imghtml.r);
+	imgHover();   //为自动生成的图片添加hover事件
+	imgClick();	  //为自动生成的图片添加click事件
 
 
 //微信二维码显示

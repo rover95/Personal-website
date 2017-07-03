@@ -171,6 +171,15 @@ figcaption p{
 	background-color: rgba(0,0,0,0.5);
 }
 
+.p-more{
+	display: block;
+	margin: 20px auto;
+	width: 100px;
+	color: #222;
+	text-align: center;
+}
+
+
 
 
 @media  screen  and (max-width: 600px) {

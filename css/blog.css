@@ -30,9 +30,11 @@ header a{
 article{
 	margin-top:20px; 
 	width: 65vw;
+	max-width: 800px;
 }
 aside{
 	width: 25vw;
+	max-width: 300px;
 	margin-right: 10px;
 	margin-top:20px;	
 }

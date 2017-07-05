@@ -30,6 +30,7 @@ R('#exe3').drag(R('#exe3 .exe-cover').last());
 R('#exe4').drag(R('#exe4 .exe-cover').last());
 R('#exe5').drag(R('#exe5 .exe-cover').last());
 R('#exe6').drag(R('#exe6 .exe-cover').last());
+R('#exe7').drag(R('#exe7 .exe-cover').last());
 R('#exe9').drag(R('#exe9 .exe-cover').last());
 //R('.program').drag(R('.pgm-head').last(),R('.program').last());		 //程序框拖拽
 

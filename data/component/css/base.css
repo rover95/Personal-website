@@ -1,0 +1,14 @@
+.ipt_box{
+	position: absolute;
+	left: 500px;
+	top: 500px;
+	width: 250px;
+	height: 30px;
+	font-size: 20px;
+	padding-left: 25px;
+	color: #aaa;
+	border:1px solid #aaa;
+	border-radius: 5px;
+	background:url(../img/search_gray.png) no-repeat 250px ; 
+	background-size: 20px 20px;
+}

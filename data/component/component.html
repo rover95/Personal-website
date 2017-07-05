@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/tool.js"></script>
+	<script type="text/javascript" src="js/base_drag.js"></script>
+	// <!-- <script type="text/javascript" src="js/test.js"></script> -->
+	<link rel="stylesheet" href="css/test.css">
+	<link rel="stylesheet" href="css/sm.min.css">
+    <link rel="stylesheet" href="css/sm-extend.min.css">
+	<title>test</title>
+</head>
+<body>
+		
+	<div class="page-group">
+		
+		<div class="page" id="page1">
+			
+
+			<div class="content">
+
+					<div class="content-block" style="margin: 0 auto;">
+					    <p class="buttons-row">
+					    <a href="#page1" class="button">滑动导航</a>
+					    <a href="#page2" class="button ">旋转轮播</a>
+					    <a href="#page3" class="button ">DIV立方体</a>
+					    <a href="#page4" class="button ">4</a>
+					    <a href="#page5" class="button ">5</a>
+					    </p>
+				  	</div>
+
+				  	<div id="nav">
+						<ul class="about">
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<ul class="about" id="menu">
+							<li>富强</li>
+							<li>民主</li>
+							<li>文明</li>
+							<li>和谐</li>
+							<li>公证</li>
+						</ul>
+						<div class="above">
+							<ul >
+								<li>富强</li>
+								<li>民主</li>
+								<li>文明</li>
+								<li>和谐</li>
+								<li>公证</li>
+							</ul>
+						</div>
+					</div>
+				
+			</div>
+			
+		</div>
+		<div class="page" id="page2">
+			<div class="content">
+
+					<div class="content-block" style="margin: 0 auto;">
+					    <p class="buttons-row">
+					    <a href="#page1" class="button">滑动导航</a>
+					    <a href="#page2" class="button ">旋转轮播</a>
+					    <a href="#page3" class="button ">DIV立方体</a>
+					    <a href="#page4" class="button ">4</a>
+					    <a href="#page5" class="button ">5</a>
+					    </p>
+				  	</div>
+				  	
+				  	<h2 style="text-align:center">旋转轮播图</h2>
+					<div id="out-line">
+						<div id="line">
+							<div>1</div>
+							<div>2</div>
+							<div>3</div>
+							<div>4</div>
+							<div>5</div>
+							<div>6</div>
+							
+						</div>
+					</div>
+
+					<div class="btn-box">
+						<p class="button">1</p>
+						<p class="button">2</p>
+						<p class="button">3</p>
+						<p class="button">4</p>
+						<p class="button">5</p>
+						<p class="button">6</p>
+					</div>
+					
+			</div>
+		</div>
+
+
+		<div class="page" id="page3">
+			<div class="content">
+					<div class="content-block" style="margin: 0 auto;">
+					    <p class="buttons-row">
+					    <a href="#page1" class="button">滑动导航</a>
+					    <a href="#page2" class="button ">旋转轮播</a>
+					    <a href="#page3" class="button ">DIV立方体</a>
+					    <a href="#page4" class="button ">4</a>
+					    <a href="#page5" class="button ">5</a>
+					    </p>
+				  	</div>
+
+				  	<div id="out-stage" >
+						<div id="stage" >
+							<div>1</div>
+							<div>2</div>
+							<div>3</div>
+							<div>4</div>
+							<div>5</div>
+							<div>6</div>
+						</div>
+					</div>
+				  	<!-- <div class="" style="margin:200px auto">
+						<input type="text" id="ipt3">
+						<input type="button" value="ok" id="ok3">
+						<p id="in-p">1</p>
+						<style>
+							#in-p{
+								width: 0;
+								height: 0;
+								background-color: #159;
+								border-top: 100px solid transparent;
+								border-left: 100px solid ;
+								border-right: 100px solid ;
+								border-bottom: 100px solid red;
+							}
+						</style>
+					</div> -->
+			</div>
+			 
+		</div>
+
+
+		<div class="page" id="page4">
+			<div class="content">
+					<div class="content-block" style="margin: 0 auto;">
+					    <p class="buttons-row">
+					    <a href="#page1" class="button">滑动导航</a>
+					    <a href="#page2" class="button ">旋转轮播</a>
+					    <a href="#page3" class="button ">DIV立方体</a>
+					    <a href="#page4" class="button ">4</a>
+					    <a href="#page5" class="button ">5</a>
+					    </p>
+				  	</div>
+
+				  	
+			</div>
+		</div>
+	</div>
+	
+	
+		
+<script src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/tool.js"></script>
+<script type="text/javascript" src="js/base_drag.js"></script>
+<script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/sm-extend.min.js' charset='utf-8'></script>
+<script type="text/javascript" src="js/test.js"></script>
+<script>
+   	var a=90;
+   	var b=0,c=0;
+   	var r;
+	t1=setInterval(function(){
+			a+=90;
+			$('#stage').css('transform','rotateY('+a+'deg)')
+		},1000)
+	
+	$('.btn-box').click(function(e){
+		var ee=$(e.target).html()
+		console.log(ee)
+		var r=(ee-1)*60
+		$('#line').css('transform','rotateY(-'+r+'deg)')
+		console.log(r)
+	})
+	$('#line').click(function(e){
+		// var ee=$(e.target).html()
+		// console.log(ee)
+		// var r=(ee-1)*60
+		$('#line').css('transform','rotateY('+r+'deg)')
+		console.log(r)
+	})
+	if(null==Object)alert('what')
+
+	
+	// $('#ok3').click(function(){
+	// 	var url='www.asd.com'
+	// 	var v=document.querySelectorAll("#ipt3")[0].value;
+	// 	var r=addparam(url,'name',v)
+	// 	r=addparam(r,'what',v)
+
+	// 	var data={
+	// 		name:'god',
+	// 		age:54,
+	// 		asd:'qwe'
+	// 	}
+	// 	ajax({
+	// 		type:'get',
+	// 		async:'false',
+	// 		url:'test2.html',
+	// 		data:data,
+	// 		success:function(e){
+	// 			alert(e);
+	// 		}
+
+			
+	// 	})
+	// })
+
+	
+
+	
+	// $('body').click(function(){
+	// 	console.log(c++)
+	// })
+</script>
+
+</body>	
+</html>

@@ -1,3 +1,4 @@
+"use strict";
 //获取所有节点
 var allNode=R('.up-box').child().elements[0];
 
@@ -28,6 +29,7 @@ function newNode(){
 	var b=random(cc);
 	if(allNode.length>=16){return null;}
 	for(let i=0,len=allNode.length;i<len;i++){		
+		//判断位置是否已有方块，如果有递归
 		if(allNode[i].offsetLeft==a*120+20&&allNode[i].offsetTop==b*120+20){			
 			newNode()
 			return;			

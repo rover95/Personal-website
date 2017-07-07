@@ -34,8 +34,7 @@ function newNode(){
 			newNode()
 			return;			
 		}
-	}
-	console.log('do')	
+	}	
 	var newDiv=document.createElement("div");
 	newDiv.className='cell';
 	newDiv.style.left=a*120+10+'px';
@@ -75,11 +74,12 @@ function val(node){
 
 
 
+//游戏结束
+function game(){
 
-
+}
 //左移
 function moveL(){
-
 	for(let i=0;i<rr;i++){
 		var theR=row(allNode,i);
 		var bd=0;					//移动位置
@@ -110,13 +110,131 @@ function moveL(){
 		}
 	}
 }
+
+//右移
+function moveR(){
+	for(let i=0;i<rr;i++){
+		var theR=row(allNode,i);
+		var bd=3;					//移动位置
+		var last=null;
+		for(let j=cc-1;j>=0;j--){
+			var theC=col(theR,j);
+			if(theC.length!=0){
+				if(last){			//如果前面有节点
+					if(last.innerText==theC[0].innerText){	//是否与前一个节点相同
+						theC[0].style.left=(bd+1)*120+10+'px';
+						theC[0].innerText*=2;
+						score+=parseInt(last.innerText);
+						theC[0].parentNode.removeChild(last);
+						last=theC[0];
+					}else{
+						theC[0].style.left=bd*120+10+'px';
+						last=theC[0];
+						bd--;
+					}
+					
+				}else{
+					theC[0].style.left=bd*120+10+'px';
+					last=theC[0];
+					bd--;
+				}
+				
+			}
+		}
+	}
+}
+
+//上移
+function moveT(){
+	for(let i=0;i<rr;i++){
+		var theC=col(allNode,i);
+		var bd=0;					//移动位置
+		var last=null;
+		for(let j=0;j<cc;j++){
+			var theR=row(theC,j);
+			if(theR.length!=0){
+				if(last){			//如果前面有节点
+					if(last.innerText==theR[0].innerText){	//是否与前一个节点相同
+						theR[0].style.top=(bd-1)*120+10+'px';
+						theR[0].innerText*=2;
+						score+=parseInt(last.innerText);
+						theR[0].parentNode.removeChild(last);
+						last=theR[0];
+					}else{
+						theR[0].style.top=bd*120+10+'px';
+						last=theR[0];
+						bd++;
+					}					
+				}else{
+					theR[0].style.top=bd*120+10+'px';
+					last=theC[0];
+					bd++;
+				}
+				
+			}
+		}
+	}
+}
+//下移
+function moveB(){
+	for(let i=0;i<rr;i++){
+		var theC=col(allNode,i);
+		var bd=3;					//移动位置
+		var last=null;
+		for(let j=cc-1;j>=0;j--){
+			var theR=row(theC,j);
+			if(theR.length!=0){
+				if(last){			//如果前面有节点
+					if(last.innerText==theR[0].innerText){	//是否与前一个节点相同
+						theR[0].style.top=(bd+1)*120+10+'px';
+						theR[0].innerText*=2;
+						score+=parseInt(last.innerText);
+						theR[0].parentNode.removeChild(last);
+						last=theR[0];
+					}else{
+						theR[0].style.top=bd*120+10+'px';
+						last=theR[0];
+						bd--;
+					}
+					
+				}else{
+					theR[0].style.top=bd*120+10+'px';
+					last=theR[0];
+					bd--;
+				}
+				
+			}
+		}
+	}
+}
+
+
+R(document).bind('keydown',function(e){
+	if(e.keyCode==37){
+		moveL();
+		newNode()
+		
+	}
+	if(e.keyCode==39){
+		moveR();
+		newNode()
+	}
+	if(e.keyCode==38){
+		moveT();
+		console.log(allNode.length)
+		newNode()
+	}
+	if(e.keyCode==40){
+		moveB();
+		newNode()
+	}
+})
 R(document).click(function(){
 	moveL();
 	setTimeout(function(){
 		newNode()
 		console.log(allNode.length)
 	},210)
-	
 })
 
 

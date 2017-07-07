@@ -1,10 +1,12 @@
 //获取所有节点
 var allNode=R('.up-box').child().elements[0];
 
-// allNode[2].style.left='10px';
+//行数列数
 var rr=4;
 var cc=4;
 
+//分数
+var score=0;
 
 
 //节点位置数值
@@ -24,12 +26,14 @@ function newNode(){
 	var n=Math.random();
 	var a=random(rr);
 	var b=random(cc);
-	for(let i=0,len=allNode.length;i<len;i++){
-		if(allNode[i].offsetLeft==a*120+20&&allNode[i].offsetTop==b*120+20){
-			newNode();
-			return;
+	if(allNode.length>=16){return null;}
+	for(let i=0,len=allNode.length;i<len;i++){		
+		if(allNode[i].offsetLeft==a*120+20&&allNode[i].offsetTop==b*120+20){			
+			newNode()
+			return;			
 		}
 	}
+	console.log('do')	
 	var newDiv=document.createElement("div");
 	newDiv.className='cell';
 	newDiv.style.left=a*120+10+'px';
@@ -76,18 +80,43 @@ function moveL(){
 
 	for(let i=0;i<rr;i++){
 		var theR=row(allNode,i);
-		var bd=0;
+		var bd=0;					//移动位置
+		var last=null;
 		for(let j=0;j<cc;j++){
 			var theC=col(theR,j);
 			if(theC.length!=0){
-				console.log(theC)
-				theC[0].style.left=bd*120+10+'px';
-				bd++;
+				if(last){			//如果前面有节点
+					if(last.innerText==theC[0].innerText){	//是否与前一个节点相同
+						theC[0].style.left=(bd-1)*120+10+'px';
+						theC[0].innerText*=2;
+						score+=parseInt(last.innerText);
+						theC[0].parentNode.removeChild(last);
+						last=theC[0];
+					}else{
+						theC[0].style.left=bd*120+10+'px';
+						last=theC[0];
+						bd++;
+					}
+					
+				}else{
+					theC[0].style.left=bd*120+10+'px';
+					last=theC[0];
+					bd++;
+				}
+				
 			}
 		}
 	}
 }
-moveL()
+R(document).click(function(){
+	moveL();
+	setTimeout(function(){
+		newNode()
+		console.log(allNode.length)
+	},210)
+	
+})
+
 
 
 

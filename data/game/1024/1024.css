@@ -1,13 +1,25 @@
 
+.score{
+	margin: 0 auto;
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
 .cover{
+	display: none;
 	position: absolute;
-	left: 50%;
-	top: 50%;
+	left: 50vw;
+	top: 250px;
 	margin-top: -50px ;
-	/*margin-left: -25vw;*/
+	margin-left: -40vw;
 	width: 80vw;
 	height: 100px;
-	margin: 0 auto;
+	text-align: center;
+	line-height: 100px;
+	font-size: 10vw;
+	font-weight: bolder;
+	color: #fd1;
 	z-index: 9;
 }
 .p-box{
@@ -50,13 +62,40 @@
 	line-height: 100px;
 	font-size: 50px;
 	color: #fff;
-	background-color: #c91;
+	background-color: #dda;
 }
 .bg7{
 	background-color: #777;
 }
 .bg-2{
-	background-color: #a77;
+	background-color: #dd9;
+}
+.bg-4{
+	background-color: #dc7;
+}
+.bg-8{
+	background-color: #da5;
+}
+.bg-16{
+	background-color: #d95;
+}
+.bg-32{
+	background-color: #c44;
+}
+.bg-64{
+	background-color: #c41;
+}
+.bg-128{
+	background-color: #a31;
+}
+.bg-256{
+	background-color: #a13;
+}
+.bg-512{
+	background-color: #f0a;
+}
+.bg-1024{
+	background-color: #f15;
 }
 
 .up-box{

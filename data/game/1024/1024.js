@@ -42,6 +42,9 @@ function newNode(){
 	newDiv.innerHTML= n<0.5?2:4;
 	R('.up-box').first().appendChild(newDiv);
 	allNode=R('.up-box').child().elements[0];
+	color();
+	getScore();
+
 }
 // newNode()
 
@@ -75,8 +78,30 @@ function val(node){
 
 
 //游戏结束
-function game(){
-
+function isGame(){
+	if(allNode.length==16){
+		R('.cover').css('display','block')
+	}
+	
+}
+//游戏开始
+function begin(){
+	R('.cover').css('display','none');
+	R('.up-box').html('');
+	newNode();
+	newNode();
+}//分数
+function getScore(){
+	var s='分数：'+score;
+	R('.score').html(s);
+}
+//更新颜色
+function color(){
+	var n=allNode.length;
+	for(let i=0;i<n;i++){
+		let a=parseInt(allNode[i].innerText)
+		allNode[i].className='cell bg-'+a
+	}
 }
 //左移
 function moveL(){
@@ -212,8 +237,7 @@ function moveB(){
 R(document).bind('keydown',function(e){
 	if(e.keyCode==37){
 		moveL();
-		newNode()
-		
+		newNode()		
 	}
 	if(e.keyCode==39){
 		moveR();

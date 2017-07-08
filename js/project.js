@@ -32,6 +32,7 @@ R('#exe5').drag(R('#exe5 .exe-cover').last());
 R('#exe6').drag(R('#exe6 .exe-cover').last());
 R('#exe7').drag(R('#exe7 .exe-cover').last());
 R('#exe9').drag(R('#exe9 .exe-cover').last());
+R('#exe11').drag(R('#exe11 .exe-cover').last());
 //R('.program').drag(R('.pgm-head').last(),R('.program').last());		 //程序框拖拽
 
 var whlt=[];    //存储将要缩小的窗口的大小，位置
@@ -87,10 +88,10 @@ function openPgm(exeId,_this){
 			</div><br/>`
 		R('.pgm-box').html(pgm);
 		//不同程序不同位置
-		var num=exeId.match(/\d/)
+		var num=exeId.match(/\d?$/)
 		num=parseInt(num[0])
 		var sw=100;
-		var sh=50;
+		var sh=10;
 		if(document.body.clientWidth<480){
 			sw=10;
 			sh=10;
@@ -99,7 +100,7 @@ function openPgm(exeId,_this){
 		//绑定拖拽事件
 		var n=R('.program').elements;
 		for(var i=0,len=n.length;i<len;i++){
-			var id=n[i].id.match(/\d/)
+			var id=n[i].id.match(/\d+/)
 			//拖拽
 			R('#pgmexe'+id[0]).drag(R('#pgmexe'+id+' .pgm-head').last(),R('#pgmexe'+id+' .program').last());
 			//提层
@@ -121,7 +122,7 @@ function openPgm(exeId,_this){
 		R('.task-box').html(taskExe);
 		//点击任务栏最小化,还原事件
 		R('.taskbar .task-exe').click(function(e){
-			var parent=R(this).elements[0].id.match(/\d/);
+			var parent=R(this).elements[0].id.match(/\d+/);
 			var num=parseInt(parent);
 			parent=R('#pgmexe'+parent).elements[0];
 			taskMinMax(parent,num)
@@ -134,7 +135,7 @@ function openPgm(exeId,_this){
 			var parent=R(this).elements[0].parentElement.parentElement.parentElement;	
 			parent.style['display']='none';
 			//关闭任务栏图标
-			var tid=parent.id.match(/\d/);
+			var tid=parent.id.match(/\d+/);
 			R('#taskexe'+tid).css('display','none')
 		})
 
@@ -281,7 +282,7 @@ function min(parent){		//parent为要缩小的窗口节点
 	var ot=parent.getBoundingClientRect().top;
 	var ow=parent.offsetWidth;
 	var oh=parent.offsetHeight;
-	var tid=parent.id.match(/\d/);
+	var tid=parent.id.match(/\d+/);
 	var l=R('#taskexe'+tid).elements[0].getBoundingClientRect().left;
 	var t=R('#taskexe'+tid).elements[0].getBoundingClientRect().top;
 	whlt[tid]={

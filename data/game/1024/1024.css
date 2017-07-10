@@ -20,7 +20,7 @@ body{
 	text-align: center;
 }
 .cover{
-	display: block;
+	display: none;
 	position: absolute;
 	left: 50vw;
 	top: 250px;
@@ -95,34 +95,34 @@ body{
 	background-color: #777;
 }
 .bg-2{
-	background-color: #dd9;
+	background-color: #ffd460;
 }
 .bg-4{
-	background-color: #dc7;
+	background-color: #f07b3f;
 }
 .bg-8{
-	background-color: #da5;
+	background-color: #ea5455;
 }
 .bg-16{
-	background-color: #d95;
+	background-color: #a3de83;
 }
 .bg-32{
-	background-color: #c44;
+	background-color: #c4edde;
 }
 .bg-64{
-	background-color: #c41;
+	background-color: #7ac7c4;
 }
 .bg-128{
-	background-color: #a31;
+	background-color: #3498db;
 }
 .bg-256{
-	background-color: #a13;
+	background-color: #005691;
 }
 .bg-512{
-	background-color: #f0a;
+	background-color: #2d4059;
 }
 .bg-1024{
-	background-color: #f15;
+	background-color: #c50000;
 }
 
 

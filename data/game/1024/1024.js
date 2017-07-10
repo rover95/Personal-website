@@ -78,6 +78,7 @@ function val(node){
 
 //游戏开始
 function begin(){
+	score=0;
 	R('.cover').css('display','none');
 	R('.up-box').html('');
 	newNode();
@@ -315,6 +316,7 @@ document.ontouchend=function(e){
 		moveB();
 		newNode()
 	}
+	GameOver();
 }
 
 R('#r-start').click(function(){

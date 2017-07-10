@@ -24,6 +24,7 @@ function random(n){
 }
 //随机生成节点
 function newNode(){
+
 	var n=Math.random();
 	var a=random(rr);
 	var b=random(cc);
@@ -46,7 +47,6 @@ function newNode(){
 	getScore();
 
 }
-// newNode()
 
 //获取第n行节点
 function row(nodes,n){
@@ -76,21 +76,52 @@ function val(node){
 }
 
 
-
-//游戏结束
-function isGame(){
-	if(allNode.length==16){
-		R('.cover').css('display','block')
-	}
-	
-}
 //游戏开始
 function begin(){
 	R('.cover').css('display','none');
 	R('.up-box').html('');
 	newNode();
 	newNode();
-}//分数
+	R('.score').html('分数：0');
+}
+begin();
+//游戏结束
+function GameOver(){
+	var isOver=true;	
+
+	// var theR=row(allNode,3);
+	// var theC1=col(theR,0)
+	// var theC2=col(theR,1)
+	// console.log(theC1[0].innerText)
+	// console.log(theC2[0].innerText)
+	// console.log(theC1[0].innerText==theC2[0].innerText)
+	if(allNode.length==16){
+		//判断每行是否有相同节点
+		for(let i=0;i<rr;i++){
+			var theR=row(allNode,i);
+			for(let j=1;j<cc;j++){
+				if(col(theR,j)[0].innerText==col(theR,j-1)[0].innerText){
+					isOver=false;
+				}
+			}
+		}
+		//判断每列是否有相同节点
+		for(let i=0;i<cc;i++){
+			var theC=col(allNode,i);
+			for(let j=1;j<rr;j++){
+				if(row(theC,j)[0].innerText==row(theC,j-1)[0].innerText){
+					isOver=false;
+				}
+			}
+		}
+		if(isOver){
+			R('.cover').css('display','block');
+		}
+	}
+		
+	
+}
+//分数
 function getScore(){
 	var s='分数：'+score;
 	R('.score').html(s);
@@ -135,7 +166,6 @@ function moveL(){
 		}
 	}
 }
-
 //右移
 function moveR(){
 	for(let i=0;i<rr;i++){
@@ -168,7 +198,6 @@ function moveR(){
 		}
 	}
 }
-
 //上移
 function moveT(){
 	for(let i=0;i<cc;i++){
@@ -253,17 +282,10 @@ R(document).bind('keydown',function(e){
 		moveB();
 		newNode()
 	}
+	GameOver();
 })
 
-
-// $(document).bind('touchstart',function(e){
-// 		Y0=e.touches[0].screenY	
-// 		alert(Y0)
-// 	});
-// $('body').bind('touchmove',function(e){
-
-// })
-
+//滑动
 var X0=0;
 var Y0=0;
 document.ontouchstart=function(e){
@@ -295,6 +317,9 @@ document.ontouchend=function(e){
 	}
 }
 
+R('#r-start').click(function(){
+	begin();
+})
 
 
 

@@ -171,11 +171,11 @@ function moveR(){
 
 //上移
 function moveT(){
-	for(let i=0;i<rr;i++){
+	for(let i=0;i<cc;i++){
 		var theC=col(allNode,i);
 		var bd=0;					//移动位置
 		var last=null;
-		for(let j=0;j<cc;j++){
+		for(let j=0;j<rr;j++){
 			var theR=row(theC,j);
 			if(theR.length!=0){
 				if(last){			//如果前面有节点
@@ -189,10 +189,11 @@ function moveT(){
 						theR[0].style.top=bd*120+10+'px';
 						last=theR[0];
 						bd++;
-					}					
+					}
+					
 				}else{
 					theR[0].style.top=bd*120+10+'px';
-					last=theC[0];
+					last=theR[0];
 					bd++;
 				}
 				
@@ -233,61 +234,107 @@ function moveB(){
 	}
 }
 
-
+//方向键移动
 R(document).bind('keydown',function(e){
-	if(e.keyCode==37){
+	//console.log(e.keyCode)
+	if(e.keyCode==37 || e.keyCode==65){
 		moveL();
 		newNode()		
 	}
-	if(e.keyCode==39){
+	if(e.keyCode==39 || e.keyCode==68){
 		moveR();
 		newNode()
 	}
-	if(e.keyCode==38){
+	if(e.keyCode==38 || e.keyCode==87){
 		moveT();
-		console.log(allNode.length)
 		newNode()
 	}
-	if(e.keyCode==40){
+	if(e.keyCode==40 || e.keyCode==83){
 		moveB();
 		newNode()
 	}
 })
-R(document).click(function(){
-	moveL();
-	setTimeout(function(){
+
+
+// $(document).bind('touchstart',function(e){
+// 		Y0=e.touches[0].screenY	
+// 		alert(Y0)
+// 	});
+// $('body').bind('touchmove',function(e){
+
+// })
+
+var X0=0;
+var Y0=0;
+document.ontouchstart=function(e){
+	X0=e.touches[0].screenX;
+	Y0=e.touches[0].screenY;	
+}
+document.ontouchmove=function(e){
+	e.preventDefault()
+}
+document.ontouchend=function(e){
+	//判断滑动方向
+	var x=e.changedTouches[0].screenX;
+	var y=e.changedTouches[0].screenY;
+	var a=x-X0;
+	var b=y-Y0;
+	//alert(a+ '\n'+b)
+	if(a<0 && Math.abs(a)>Math.abs(b)){   //left
+		moveL();
 		newNode()
-		console.log(allNode.length)
-	},210)
-})
-
-
-
-
-
-
-
-
-
-
-
-//更新视图
-function upData(){
-	for(let r=0;r<rr;r++){
-		for(let c=0;c<cc;c++){
-			if(stt[r][c]!=0){
-
-			}
-		}
+	}else if(a>0 && Math.abs(a)>Math.abs(b)){   //right
+		moveR();
+		newNode()
+	}else if(b<0 && Math.abs(a)<Math.abs(b)){   //top
+		moveT();
+		newNode()
+	}else if(b>0 && Math.abs(a)<Math.abs(b)){   //bottom
+		moveB();
+		newNode()
 	}
 }
 
-//获取当前节点位置
 
-//左移一格
-// function tl(){
-// 	var a=game.allNode[0];
-// 	console.log(a)
 
+
+
+
+
+
+
+
+
+
+
+//function moveT(){
+// 	for(let i=0;i<rr;i++){
+// 		let theC=col(allNode,i);
+// 		let bd=0;					//移动位置
+// 		let last=null;
+// 		for(let j=0;j<cc;j++){
+// 			let theR=row(theC,j);
+// 			if(theR.length!=0){
+// 				if(last){			//如果前面有节点
+// 					if(last.innerText==theR[0].innerText){	//是否与前一个节点相同
+// 						console.log(last.innerText+'  '+theR[0].innerText)
+// 						theR[0].style.top=(bd-1)*120+10+'px';
+// 						theR[0].innerText*=2;
+// 						score+=parseInt(last.innerText);
+// 						theR[0].parentNode.removeChild(last);
+// 						last=theR[0];
+// 					}else{
+// 						theR[0].style.top=bd*120+10+'px';
+// 						last=theR[0];
+// 						bd++;
+// 					}					
+// 				}else{
+// 					theR[0].style.top=bd*120+10+'px';
+// 					last=theR[0];
+// 					bd++;
+// 				}
+				
+// 			}
+// 		}
+// 	}
 // }
-// tl()

@@ -1,4 +1,5 @@
 
+
 .score{
 	margin: 0 auto;
 	width: 100px;
@@ -56,7 +57,7 @@
 	width: 100px;
 	height: 100px;
 	margin: 10px;
-	/*transition:left 0.1s ,top 0.1s;*/
+	/*transition:left 0.5s ,top 0.5s;*/
 	border-radius: 5px;
 	text-align: center;
 	line-height: 100px;
@@ -106,3 +107,5 @@
 	height: 100%;
 	padding: 10px;
 }
+
+

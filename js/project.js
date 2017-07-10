@@ -141,17 +141,21 @@ function openPgm(exeId,_this){
 
 		//点击叉最小化窗口	
 		R('.exemin').click(function(){
-				var parent=R(this).elements[0].parentElement.parentElement.parentElement;
-				min(parent);
+			var parent=R(this).elements[0].parentElement.parentElement.parentElement;
+			min(parent);
 		})
 
+		//点击最大化跳转新窗口
+		R('.exemax').click(function(){
+			window.open(pageurl);
+		})
 		
 
-		}else{	
-			R('#pgm'+exeId).css('z-index',z++);
-			R('#pgm'+exeId).css('display','block');
-			R('#task'+exeId).css('display','block');
-		}	
+	}else{	
+		R('#pgm'+exeId).css('z-index',z++);
+		R('#pgm'+exeId).css('display','block');
+		R('#task'+exeId).css('display','block');
+	}	
 }
 	
 

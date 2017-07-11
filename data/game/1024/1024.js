@@ -316,7 +316,7 @@ document.ontouchend=function(e){
 		moveB();
 		newNode()
 	}
-	GameOver();
+	GameOver(); 
 }
 
 R('#r-start').click(function(){

@@ -164,7 +164,7 @@ function ajax(obj){
 		
 	}else{
 		var url=obj.url;
-		url=addparam(url,'name','god');
+		//url=addparam(url,'name','god');
 		xhr.open("get",url,true);
 		xhr.send(null);
 	}

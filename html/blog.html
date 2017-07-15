@@ -482,6 +482,57 @@ if ($result->num_rows > 0) {
 			</div> 	<!-- text-box -->
 
 
+			<div class="text-box">
+				<div class="text-head">
+					<img src="../icon/head.png" alt="头像" class="img-head">
+					<h3>apache配置多端口</h3>
+					<p class="text-date">2017.6.14</p>
+					<div class="lable-box">
+						<span class="cell bg-r">JS</span>
+						<span class="cell bg-b">CSS</span>
+						<span class="cell bg-g">HTML</span>
+					</div>
+				</div>
+				<div class="text-body">
+					<div class="content">					
+						<section>
+							<ol>
+								<li>打开apache的<code>httpd.conf</code>文件，在<code>Listen 80</code>处另起一行输入<code>Listen 8095</code> 监听8095端口/</li>
+								<li>在httpd.conf文件最后一行添加：
+<pre><code>NameVirtualhost localhost:8095 # 虚拟主机端口
+&lt;virtualhost localhost:8095>
+	documentroot E:/web  #网站目录绝对路径 ~注意斜杠的方向/
+	servername locahost:8095 #对应监听的端口
+&lt;/virtualhost>
+</code></pre>
+</li>
+								<li>添加目录属性：
+<pre><code>&lt;Directory "E:/web">
+	Options Indexes FollowSymLinks
+	AllowOverride All #允许URL重写
+	Order allow,deny
+	Allow from all
+&lt;/Directory>
+</code></pre>
+</li>
+								<li>重启apache</li>
+							</ol>
+
+						</section>						
+					</div>
+				</div>
+				<div class="open">
+					<p class="open-a">展开全部</p>
+					<p class="close-a" style="display:none">收起</p>
+				</div>
+					
+				<div class="text-foot">
+					<p><span id="a"></span></p>
+					<p><span id="b"></span></p>
+					<p><span id="c"></span></p>
+				</div>	
+			</div> 	<!-- text-box -->
+
 
 			<div class="text-box" name="top">
 				<div class="text-head">

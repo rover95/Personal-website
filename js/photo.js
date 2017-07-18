@@ -57,7 +57,7 @@
 			var h=R('.all-cover img').first().height;
 			var vw=document.body.clientWidth;
 			var vh=document.body.clientHeight;
-			console.log((vw/w)*0.8*h+'---'+0.9*vh)
+			//console.log((vw/w)*0.8*h+'---'+0.9*vh)
 			R('.all-cover img').css('width',85+'vw')
 			R('.all-cover img').css('height','auto')
 			// if(h*vw<vh*w){
@@ -120,7 +120,15 @@
 
 		imghtml[node]+=html;
 	}
+//微信二维码显示
+	function wei(){
+		R('.weixin').css('display','flex')
+	}
+	R('.weixin').bind('mousedown',function(){
+		R('.weixin').css('display','none')
+	})
 
+//添加图片
 	img('l','../img/xy003.jpg','夕阳','2017.4');
 	img('c','../img/rw001.jpg','THE FOUR','2017.6');
 	img('c','../img/rw002.jpg','THE FOUR','2017.6');
@@ -194,18 +202,74 @@
 	img('c','../img/fg023.jpg','镇江润州区','2016.5');
 	
 
-
-	R('#column-left').html(imghtml.l);
-	R('#column-center').html(imghtml.c);
-	R('#column-right').html(imghtml.r);
-	imgHover();   //为自动生成的图片添加hover事件
-	imgClick();	  //为自动生成的图片添加click事件
-
-
-//微信二维码显示
-	function wei(){
-		R('.weixin').css('display','flex')
+	function showAll(){
+		R('#column-left').html(imghtml.l);
+		R('#column-center').html(imghtml.c);
+		R('#column-right').html(imghtml.r);
+		imgHover();   //为自动生成的图片添加hover事件
+		imgClick();	  //为自动生成的图片添加click事件
 	}
-	R('.weixin').bind('mousedown',function(){
-		R('.weixin').css('display','none')
+	showAll()
+
+//显示不同类别图片
+	R('.photo-nav li').click(function(e){
+		switch(this.innerHTML){
+			case "人物":
+				showAll()
+				showPhoto("rw");
+				break;
+			case "风光":
+				showAll()
+				showPhoto("fg");
+				break;
+			case "静物":
+				showAll()
+				showPhoto("jw");
+				break;
+			case "夕阳":
+				showAll()
+				showPhoto("xy");
+				break;
+		}
+		
 	})
+
+	function showPhoto(type){
+		var img=R('.photo-cell').elements;
+		var iType=[];
+		var p=0;	//位置左中右
+		//显示所有
+		R('#column-left').html(imghtml.l);
+		R('#column-center').html(imghtml.c);
+		R('#column-right').html(imghtml.r);
+		imgHover();   //为自动生成的图片添加hover事件
+		imgClick();	  //为自动生成的图片添加click事件
+		// //隐藏其他分类
+		// for(var i=0,len=img.length;i<len;i++){
+		// 	if(!getSrc(img[i]).match(type)){
+		// 		R(img[i]).css("display","none")
+		// 	}
+		// }
+		for(var i=0,len=img.length;i<len;i++){
+			if(getSrc(img[i]).match(type)){
+				iType.push(img[i])
+			}
+		}
+		//console.log(R('#column-left').elements[0].childNodes)
+		R('#column-left').html('')
+		R('#column-center').html('')
+		R('#column-right').html('')
+		//R('#column-left').elements[0].appendChild(iType[3])
+		for (var i = 0; i < iType.length; i++) {
+			p= i%3==0?'#column-left':i%3==1?'#column-center':i%3==2?'#column-right':'#column-left'
+			addImg(p,iType[i])
+		};
+
+	}
+	//获取SRC
+	function getSrc(ele){
+		return ele.getElementsByTagName('img')[0].src
+	}
+	function addImg(p,img){
+		R(p).elements[0].appendChild(img)
+	}

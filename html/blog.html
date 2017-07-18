@@ -74,20 +74,149 @@
 		<article>
 			
 
-			<!-- <div class="text-box">
+			<div class="text-box">
 				<div class="text-head">
 					<img src="../icon/head.png" alt="头像" class="img-head">
-					<h3>模板</h3>
-					<p class="text-date">2017.6.18</p>
+					<h3>闭包</h3>
+					<p class="text-date">2017.7.16</p>
 					<div class="lable-box">
 						<span class="cell bg-r">JS</span>
-						<span class="cell bg-b">CSS</span>
-						<span class="cell bg-g">HTML</span>
+						<!-- <span class="cell bg-b">CSS</span>
+						<span class="cell bg-g">HTML</span> -->
 					</div>
 				</div>
 				<div class="text-body">
 					<div class="content">					
 						<section>
+<p>闭包就是能够读取其他函数内部变量的函数由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成"定义在一个函数内部的函数"。
+所以，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁--阮一峰<br>
+<h3>按照js高程的说法“闭包是指有权访问另一个函数作用域中的变量的函数”</h3></p>
+<pre><code>
+function f1(){
+　 var n=999;
+　 function f2(){
+　　  alert(n); 
+　 }
+　 return f2;		//f2就是闭包
+}
+var result=f1();
+result(); // 999
+</code></pre>
+<p>可以把父函数当作对象，把闭包当作它的公用方法，把内部变量当作它的私有属性<br>
+如果一个函数访问了它的外部变量，那么它就是一个闭包。<br><br>
+利用闭包访问局部变量，</p>
+<pre><code>
+var name = "The Window";
+var object = {
+　　name : "My Object",
+	age: 28,
+　　getNameFunc : function(){
+		var that=this;
+　　　　return function(){
+　　　　　　return that.name;
+　　　　};
+　　}		
+};
+console.log(object.getNameFunc()());
+</code></pre><br>
+<p>返回闭包时牢记的一点就是：返回函数不要引用任何循环变量，或者后续会发生变化的变量。</p>
+<pre><code>
+function count() {
+    var arr = [];
+    for (var i=1; i&lt;=3; i++) {    //将var 改为 let 则输出1,4,9
+        arr.push(function () {
+            return i * i;
+        });
+    }
+    return arr;
+}
+
+var results = count();
+var f1 = results[0];	
+var f2 = results[1];	
+var f3 = results[2];	
+console.log(f1()) 		//16
+console.log(f2()) 		//16
+console.log(f3()) 		//16
+</code></pre>
+<p>利用闭包创建一个计数器</p>
+<pre><code>
+function create_counter(initial) {
+    var x = initial || 0;
+    return {
+        inc: function () {
+            x += 1;
+            return x;
+        }
+    }
+}
+c1.inc(); // 1
+c1.inc(); // 2
+c1.inc(); // 3
+</code></pre>
+<p>匿名函数(闭包)的执行环境具有全局性，因此其this对象通常指向window（除非使用了call(),apply()等）</p>
+<pre><code>
+var obj={
+	aa:function aa(){
+		console.log(this);		   	//obj
+		(()=>console.log(this))(); 	//obj
+		(function(){
+			console.log(this)
+		})(); 						//window
+		function bb(){
+			console.log(this) 		//window
+		}
+		bb()
+	}
+}			
+obj.aa();
+</code></pre>
+<h3>闭包的应用</h3>
+<p>1.设置私有属性</p>
+<pre><code>
+var Foo = function(){
+  var name = 'fooname';
+  var age = 12;
+  this.getName = function(){
+      return name;
+  };
+  this.getAge = function(){
+      return age;
+  };
+};
+var foo = new Foo();
+
+foo.name;        //  => undefined
+foo.age;         //  => undefined
+foo.getName();   //  => 'fooname'
+foo.getAge();    //  => 12
+</code></pre>
+<p>2.在函数执行之前为要执行的函数提供具体参数</p>
+<p> 某些情况下，是无法为要执行的函数提供参数，只能在函数执行之前，提前提供参数
+如：setTimeOut , Ajax callbacks , el.attachEvent("onclick",func) 等）</p>
+<pre><code>
+var parm=222;
+function f1(){alert(111)}
+function f2(obj){alert(obj)}
+setTimeout(f1,500);//正确,无参数
+var test1=f2(parm);//执行一次f2函数
+setTimeout(f2,500);//undefined，传参失败
+setTimeout(f2(parm),500);//参数无效，传参失败
+setTimeout(function(parm){alert(parm)},500);//undefined，传参失败
+document.getElementById("hello").onclick=f1;//正确
+
+//正确做法，使用闭包
+function f3(obj){return function(){alert(obj)}}
+var test2=f3(parm);//返回f3的内部函数的引用
+setTimeout(test2,500);//正确,222
+document.getElementById("hello").onclick=test2;//正确,222
+document.getElementById("hello").attachEvent("onclick",test2);//正确,222
+</code></pre>
+<p class="pr">参考资料： <a href="http://nec.netease.com/standard/css-sort.html"  target="_blank">http://nec.netease.com</a>
+<br>
+<a href="http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html"  target="_blank">阮一峰博客</a>
+
+
 
 						</section>						
 					</div>
@@ -102,7 +231,9 @@
 					<p><span id="b"></span></p>
 					<p><span id="c"></span></p>
 				</div>	
-			</div>  -->	<!-- text-box -->
+			</div> 	<!-- text-box -->
+
+
 
 			<div class="text-box">
 				<div class="text-head">

@@ -36,6 +36,7 @@
 		</div>
 	</div>
 	<script src="js/base.js"></script>
+	<script src="js/tool.js"></script>
 	<script>
 		R('.font').hover(function(){	
 			R(this).find('.hide').removeclass('fadeOutDown')		
@@ -43,6 +44,12 @@
 		},function(){
 			R(this).find('.hide').addclass('fadeOutDown')
 			
+		})
+		ajax({
+			url:'php/index.php'
+			success:function(res){
+				alert(res)
+			}
 		})
 	</script>
 </body>

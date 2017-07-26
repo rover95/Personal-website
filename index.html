@@ -50,11 +50,13 @@
 		ajax({
 			url:'http://freegeoip.net/json/',
 			success:function(data){
-				//res= eval('('+data+')')
-				console.log(data);
+				res= eval('('+data+')')
 				
+				var ip=res.ip;
+				//data=data+'';
+				console.log(data);
 				ajax({
-					url:'php/index.php',
+					url:'http://rover95.date/php/index.php',
 					type:'post',
 					data:{
 						"json":data

@@ -37,6 +37,7 @@
 	</div>
 	<script src="js/tool.js"></script>
 	<script src="js/base.js"></script>
+	<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 	<script>
 		R('.font').hover(function(){	
 			R(this).find('.hide').removeclass('fadeOutDown')		
@@ -46,6 +47,7 @@
 			
 		});
 
+		var ipBySohu=returnCitySN["cip"];
 		var res={};
 		ajax({
 			url:'http://freegeoip.net/json/',
@@ -57,7 +59,8 @@
 					url:'http://rover95.date/php/index.php',
 					type:'post',
 					data:{
-						"json":data
+						"json":data,
+						"sohu":ipBySohu
 					},
 					success:function(res){
 						console.log(res);

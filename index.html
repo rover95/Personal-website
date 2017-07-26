@@ -35,6 +35,7 @@
 			</p>
 		</div>
 	</div>
+	<script src="js/tool.js"></script>
 	<script src="js/base.js"></script>
 	<script>
 		R('.font').hover(function(){	
@@ -43,6 +44,27 @@
 		},function(){
 			R(this).find('.hide').addclass('fadeOutDown')
 			
+		});
+
+		var res={};
+		ajax({
+			url:'http://freegeoip.net/json/',
+			success:function(data){
+				//res= eval('('+data+')')
+				console.log(data);
+				
+				ajax({
+					url:'php/index.php',
+					type:'post',
+					data:{
+						"json":data
+					},
+					success:function(res){
+						console.log(res);
+						//R('body').html(res);
+					}
+				})
+			}
 		})
 	</script>
 </body>

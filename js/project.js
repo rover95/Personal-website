@@ -335,3 +335,35 @@ function taskMinMax(parent,num){
 		
 	
 }	
+
+
+
+//设备信息
+var device=navigator.userAgent.toLowerCase();
+//当前页面
+var page = "project";
+//搜狐ip接口
+var ipBySohu=returnCitySN["cip"];
+var res={};
+ajax({
+	url:'http://freegeoip.net/json/',
+	success:function(data){
+		//res= eval('('+data+')');
+		//data=data+'';
+		//console.log(data);
+		ajax({
+			url:'http://rover95.date/php/index.php',
+			type:'post',
+			data:{
+				"json":data,
+				"sohu":ipBySohu,
+				"device":device,
+				"page":page
+			},
+			success:function(res){
+				console.log(res);
+				//R('body').html(res);
+			}
+		})
+	}
+})

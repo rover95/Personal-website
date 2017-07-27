@@ -46,9 +46,12 @@
 			R(this).find('.hide').addclass('fadeOutDown')
 			
 		});
-	
+		
+		//设备信息
 		var device=navigator.userAgent.toLowerCase();
-
+		//当前页面
+		var page = "index";
+		//搜狐ip接口
 		var ipBySohu=returnCitySN["cip"];
 		var res={};
 		ajax({
@@ -63,7 +66,8 @@
 					data:{
 						"json":data,
 						"sohu":ipBySohu,
-						"device":device
+						"device":device,
+						"page":page
 					},
 					success:function(res){
 						console.log(res);

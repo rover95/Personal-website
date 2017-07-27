@@ -46,6 +46,8 @@
 			R(this).find('.hide').addclass('fadeOutDown')
 			
 		});
+	
+		var device=navigator.userAgent.toLowerCase();
 
 		var ipBySohu=returnCitySN["cip"];
 		var res={};
@@ -60,7 +62,8 @@
 					type:'post',
 					data:{
 						"json":data,
-						"sohu":ipBySohu
+						"sohu":ipBySohu,
+						"device":device
 					},
 					success:function(res){
 						console.log(res);

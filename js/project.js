@@ -352,7 +352,7 @@ ajax({
 		//data=data+'';
 		//console.log(data);
 		ajax({
-			url:'http://rover95.date/php/index.php',
+			url:'http://139.196.85.218/data-pw/index.php',
 			type:'post',
 			data:{
 				"json":data,

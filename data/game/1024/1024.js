@@ -9,6 +9,7 @@ var cc=4;
 //分数
 var score=0;
 
+var isMove=0;
 
 //节点位置数值
 function getX(elements){
@@ -24,7 +25,7 @@ function random(n){
 }
 //随机生成节点
 function newNode(){
-
+	if(isMove) return;
 	var n=Math.random();
 	var a=random(rr);
 	var b=random(cc);
@@ -45,6 +46,8 @@ function newNode(){
 	allNode=R('.up-box').child().elements[0];
 	color();
 	getScore();
+
+	isMove=1;		
 
 }
 
@@ -264,24 +267,25 @@ function moveB(){
 	}
 }
 
+R(document).bind('transitionend',newNode);
 //方向键移动
 R(document).bind('keydown',function(e){
 	//console.log(e.keyCode)
 	if(e.keyCode==37 || e.keyCode==65){
 		moveL();
-		newNode()		
+		isMove=0;
 	}
 	if(e.keyCode==39 || e.keyCode==68){
-		moveR();
-		newNode()
+		moveR();	
+		isMove=0;	
 	}
 	if(e.keyCode==38 || e.keyCode==87){
 		moveT();
-		newNode()
+		isMove=0;			
 	}
 	if(e.keyCode==40 || e.keyCode==83){
 		moveB();
-		newNode()
+		isMove=0;			
 	}
 	GameOver();
 })

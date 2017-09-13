@@ -444,6 +444,13 @@ Get.prototype.bind=function(ev,fn){
 	}
 	return this;
 }
+//方法-事件删除
+Get.prototype.removeEvent=function(ev,fn){
+	 for(var i=0;i<this.elements.length;i++){
+		removeEvent(this.elements[i],ev,fn)
+	}
+	return this;
+}
 //方法-获取焦点事件
 Get.prototype.focus=function(fn){
 	 for(var i=0;i<this.elements.length;i++){

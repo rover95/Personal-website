@@ -1,3 +1,12 @@
+//跳转页面
+function goOtherPage(){
+	R('body').html("<p style='text-align:center;margin-top:50vh'>已有工作，暂不公开</p>")
+	setTimeout(function(){
+		window.location.href="../index.html"
+	},2000)
+}
+goOtherPage();	
+
 //首页背景图自适应
 if(window.screen.height*16<9*window.screen.width){
 	R('.p1').css('background-size','100% auto')

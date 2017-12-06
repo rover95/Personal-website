@@ -5,7 +5,7 @@ function goOtherPage(){
 		window.location.href="../index.html"
 	},2000)
 }
-goOtherPage();	
+//goOtherPage();	
 
 //首页背景图自适应
 if(window.screen.height*16<9*window.screen.width){

@@ -270,7 +270,8 @@ nav a{
 	display: flex;
 	justify-content:center;
 	align-items:center;
-	margin: 5px
+	margin: 5px;
+	
 }
 .bg-jq{
 	background: url(../img/jquery.png) no-repeat center;

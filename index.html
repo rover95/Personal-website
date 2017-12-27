@@ -40,11 +40,12 @@
 	<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 	<script>
 		R('.font').hover(function(){	
+			
 			R(this).find('.hide').removeclass('fadeOutDown')		
 			R(this).find('.hide').css('display','block')
 		},function(){
 			R(this).find('.hide').addclass('fadeOutDown')
-			
+			// R('#all div').css('width','25%')
 		});
 		
 		//设备信息

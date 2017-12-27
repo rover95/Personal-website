@@ -7,20 +7,24 @@ body{
 	font-family:"Microsoft YaHei";
 }
 #all{
+	/* display: flex;
+	flex-derection:row;
+	flex-wrap: wrap-reverse; */
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	white-space:nowrap;
 }
-#all div{
-	/*display: flex;
-	flex-derection:row;
-	justify-content:center;
-	align-items:center;*/
+#all > div{	
+	display: inline;
 	width: 25%;
 	height: 100vh;
 	float: left;
+	transition: all 0.3s;
 	opacity: 1;
+	white-space:nowrap;
 }
+
 .font{
 	position: relative;
 	width: 100%;

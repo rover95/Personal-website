@@ -255,10 +255,13 @@ nav a{
 .xm{
 	position: relative;
 	display: flex;
+	height: auto!important;
+	min-height: 100vh!important;
 	flex-direction:column;
 	justify-content:center;
 	align-items:center;
 	background-color: #333;
+	padding-bottom: 50px;
 }
 .xm .p-title{
 	margin-bottom: 20px;

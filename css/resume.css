@@ -194,19 +194,19 @@ nav a{
 }
 
 .b-o1{
-	background-color: rgba(250,200,25,.1);
+	background-color: rgba(250,200,25,.2);
 }
 .b-o3{
 	background-color: rgba(250,200,25,.3); 
 }
 .b-o5{
-	background-color: rgba(250,200,25,.55); 
+	background-color: rgba(250,200,25,.6); 
 }
 .b-o7{
 	background-color: rgba(250,200,25,.70); 
 }
 .b-o9{
-	background-color: rgba(250,200,25,.70); 
+	background-color: rgba(250,200,25,.85); 
 }
 .b-o{
 	background-color: rgba(250,200,25,1); 
@@ -311,6 +311,7 @@ nav a{
 	position: absolute;
 	text-align: center;
 	bottom: 20px;
+	width: 100%;
 }
 .xm-a > a{
 	margin: 0 auto;

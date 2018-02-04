@@ -15,7 +15,7 @@ body{
 	overflow: hidden;
 	white-space:nowrap;
 }
-#all > div{	
+#all > a{	
 	display: inline;
 	width: 25%;
 	height: 100vh;

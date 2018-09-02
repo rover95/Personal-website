@@ -8,7 +8,7 @@ function goOtherPage(){
 //goOtherPage();	
 
 //首页背景图自适应
-if(window.screen.height*16<9*window.screen.width){
+if (document.body.clientWidth * 9 >= 16 * document.body.clientHeight){
 	R('.p1').css('background-size','100% auto')
 }
 

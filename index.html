@@ -37,7 +37,6 @@
 	</div>
 	<script src="js/tool.js"></script>
 	<script src="js/base.js"></script>
-	<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 	<script>
 		R('.font').hover(function(){	
 			
@@ -48,35 +47,7 @@
 			// R('#all div').css('width','25%')
 		});
 		
-		//设备信息
-		var device=navigator.userAgent.toLowerCase();
-		//当前页面
-		var page = "index";
-		//搜狐ip接口
-		var ipBySohu=returnCitySN["cip"];
-		var res={};
-		ajax({
-			url:'http://freegeoip.net/json/',
-			success:function(data){
-				//res= eval('('+data+')');
-				//data=data+'';
-				//console.log(data);
-				ajax({
-					url:'http://139.196.85.218/data-pw/index.php',
-					type:'post',
-					data:{
-						"json":data,
-						"sohu":ipBySohu,
-						"device":device,
-						"page":page
-					},
-					success:function(res){
-						console.log(res);
-						//R('body').html(res);
-					}
-				})
-			}
-		})
+		
 	</script>
 
 <script>

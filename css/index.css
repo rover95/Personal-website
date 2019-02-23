@@ -73,7 +73,7 @@ body{
 	background-size: auto 100%;
 }
 @media  screen  and (max-width: 768px) {
-	#all div{
+	#all a{
 		width: 100vw;
 		height: 25vh;		
 	}
@@ -85,8 +85,8 @@ body{
 		font-size: 5vw;
 	}
 	.font span{
-	position: absolute;
-	left: 40%;
+		position: absolute;
+		left: 40%;
 	}
 }
 
